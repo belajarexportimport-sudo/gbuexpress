@@ -37,9 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 50) {
             navbar.style.padding = '0.5rem 0';
             navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            navbar.classList.add('scrolled');
         } else {
             navbar.style.padding = '1rem 0';
             navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+            navbar.classList.remove('scrolled');
         }
     });
 
