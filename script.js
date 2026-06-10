@@ -87,10 +87,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .feature-item, .coverage-card').forEach(el => {
+    document.querySelectorAll('.service-card, .feature-item, .coverage-card, .section-title, .section-subtitle, .contact-item, .contact-form-wrapper').forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(40px)';
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
         observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links with offset
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 80; // height of fixed navbar
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
     });
 });
