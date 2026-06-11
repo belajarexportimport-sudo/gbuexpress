@@ -1,0 +1,178 @@
+﻿Cara Menghitung Chargeable Weight dan Memilih antara Air Express, Air Freight, atau Sea Freight
+Dalam dunia logistik internasional, salah satu hal yang paling sering membingungkan pelanggan adalah mengapa biaya pengiriman tidak selalu dihitung berdasarkan berat barang yang terlihat di timbangan.
+Tidak jarang sebuah paket dengan berat hanya 15 kg dikenakan biaya pengiriman setara 25 kg atau bahkan lebih. Hal ini terjadi karena perusahaan logistik menggunakan sistem yang disebut Chargeable Weight atau berat tagihan.
+Memahami Chargeable Weight sangat penting bagi importir, eksportir, pelaku UMKM, maupun perusahaan yang rutin melakukan pengiriman internasional. Dengan memahami cara perhitungannya, Anda dapat memperkirakan biaya logistik dengan lebih akurat dan memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis.
+Apa Itu Chargeable Weight?
+Chargeable Weight adalah berat yang digunakan sebagai dasar perhitungan biaya pengiriman.
+Perusahaan pengiriman akan membandingkan dua nilai:
+Actual Weight (Berat Aktual)
+Volumetric Weight (Berat Volume)
+Nilai yang lebih besar akan digunakan sebagai Chargeable Weight.
+Sebagai contoh:
+Berat Aktual: 18 kg
+Berat Volumetrik: 25 kg
+Maka biaya pengiriman akan dihitung berdasarkan 25 kg.
+Apa Itu Actual Weight?
+Actual Weight adalah berat fisik barang yang diukur menggunakan timbangan.
+Contoh:
+Satu karton berisi produk elektronik memiliki berat aktual sebesar:
+20 kg
+Maka Actual Weight yang digunakan adalah 20 kg.
+Apa Itu Volumetric Weight?
+Volumetric Weight atau berat volume adalah metode perhitungan berdasarkan ruang yang ditempati barang selama proses pengiriman.
+Barang yang ringan namun berukuran besar tetap memakan ruang yang signifikan di pesawat atau kendaraan pengangkut. Oleh karena itu perusahaan logistik juga memperhitungkan volume barang.
+Semakin besar dimensi barang, semakin besar pula berat volumetriknya.
+Cara Menghitung Chargeable Weight untuk Air Freight
+Pada pengiriman Air Freight, rumus yang umum digunakan adalah:
+Chargeable Weight (kg) = Panjang (cm) Ã— Lebar (cm) Ã— Tinggi (cm) Ã· 6000
+Contoh Perhitungan
+Ukuran karton:
+Panjang: 60 cm
+Lebar: 50 cm
+Tinggi: 40 cm
+Perhitungan:
+60 Ã— 50 Ã— 40 Ã· 6000
+= 20 kg
+Berat Volumetrik = 20 kg
+Jika berat aktual barang adalah 15 kg, maka:
+Chargeable Weight = 20 kg
+Karena nilai volumetrik lebih besar daripada berat aktual.
+Cara Menghitung Chargeable Weight untuk Air Express
+Layanan Air Express seperti DHL Express, FedEx, UPS, TNT, dan kurir ekspres internasional lainnya biasanya menggunakan divisor yang berbeda.
+Rumus yang umum digunakan:
+Chargeable Weight (kg) = Panjang (cm) Ã— Lebar (cm) Ã— Tinggi (cm) Ã· 5000
+Contoh Perhitungan
+Ukuran karton:
+Panjang: 60 cm
+Lebar: 50 cm
+Tinggi: 40 cm
+Perhitungan:
+60 Ã— 50 Ã— 40 Ã· 5000
+= 24 kg
+Berat Volumetrik = 24 kg
+Jika berat aktual barang hanya 15 kg, maka biaya pengiriman akan dihitung berdasarkan 24 kg.
+Mengapa Air Express dan Air Freight Berbeda?
+Perbedaan utama terletak pada model bisnis dan pemanfaatan kapasitas kargo.
+Air Express
+Contoh layanan:
+DHL Express
+FedEx
+UPS
+TNT
+Karakteristik:
+Pengiriman sangat cepat
+Door-to-door
+Tracking real-time
+Penanganan lebih praktis
+Cocok untuk dokumen dan paket kecil
+Karena umumnya menggunakan divisor 5000, berat volumetrik cenderung lebih besar sehingga biaya pengiriman biasanya lebih tinggi.
+Air Freight
+Contoh layanan:
+Freight Forwarder Internasional
+Konsolidasi Cargo Udara
+Pengiriman Komersial Internasional
+Karakteristik:
+Lebih ekonomis dibanding Air Express
+Cocok untuk pengiriman komersial
+Fleksibel untuk volume lebih besar
+Ideal untuk kebutuhan impor dan ekspor
+Karena umumnya menggunakan divisor 6000, Chargeable Weight biasanya lebih rendah dibanding Air Express untuk ukuran barang yang sama.
+Bagaimana Perhitungan pada Sea Freight?
+Berbeda dengan pengiriman udara, Sea Freight tidak menggunakan sistem Chargeable Weight seperti Air Express maupun Air Freight.
+Pada pengiriman laut, dasar perhitungan biaya biasanya menggunakan:
+CBM (Cubic Meter)
+Berat Aktual (Tonase)
+Sistem W/M (Weight Measurement)
+Apa Itu CBM?
+CBM (Cubic Meter) adalah satuan volume yang digunakan dalam pengiriman laut.
+Rumus Menghitung CBM
+Panjang (m) Ã— Lebar (m) Ã— Tinggi (m)
+Contoh
+Ukuran barang:
+Panjang: 1 meter
+Lebar: 0,8 meter
+Tinggi: 0,5 meter
+Perhitungan:
+1 Ã— 0,8 Ã— 0,5
+= 0,4 CBM
+Maka volume barang tersebut adalah 0,4 CBM.
+Apa Itu Sistem W/M (Weight Measurement)?
+Dalam pengiriman laut dikenal istilah W/M atau Weight Measurement.
+Artinya perusahaan pelayaran akan membandingkan:
+Berat barang
+Volume barang
+Kemudian menggunakan nilai yang menghasilkan biaya lebih besar.
+Sebagai panduan umum:
+1 CBM â‰ˆ 1 Ton
+Contoh:
+Berat aktual = 300 kg
+Volume = 1,2 CBM
+Karena volume lebih besar daripada berat ekuivalennya, maka biaya biasanya dihitung berdasarkan 1,2 CBM.
+Kapan Sebaiknya Menggunakan Air Express?
+Air Express cocok untuk:
+Dokumen penting
+Sampel produk
+Barang bernilai tinggi
+Barang dengan kebutuhan pengiriman sangat cepat
+Estimasi transit:
+2â€“7 hari kerja
+Kapan Sebaiknya Menggunakan Air Freight?
+Air Freight cocok untuk:
+Barang dagangan
+Spare part
+Produk elektronik
+Barang komersial
+Kebutuhan impor dan ekspor reguler
+Estimasi transit:
+3â€“10 hari kerja
+Biaya biasanya lebih ekonomis dibanding Air Express.
+Kapan Sebaiknya Menggunakan Sea Freight?
+Sea Freight cocok untuk:
+Impor barang dari China
+Mesin industri
+Furniture
+Material proyek
+Barang dengan volume besar
+Estimasi transit:
+15â€“40 hari tergantung negara asal dan tujuan.
+Biaya per kilogram biasanya jauh lebih rendah dibanding pengiriman udara.
+Perbandingan Air Express, Air Freight, dan Sea Freight
+Faktor
+Air Express
+Air Freight
+Sea Freight
+Kecepatan
+Sangat Cepat
+Cepat
+Paling Lama
+Biaya
+Paling Mahal
+Menengah
+Paling Ekonomis
+Dasar Perhitungan
+Actual vs Volumetric
+Actual vs Volumetric
+CBM atau Tonase
+Cocok Untuk
+Dokumen & Sampel
+Cargo Komersial
+Volume Besar
+Transit Time
+2â€“7 Hari
+3â€“10 Hari
+15â€“40 Hari
+Kapasitas Barang
+Kecilâ€“Menengah
+Menengahâ€“Besar
+Sangat Besar
+Kesimpulan
+Chargeable Weight merupakan dasar perhitungan biaya pengiriman udara yang ditentukan berdasarkan nilai terbesar antara berat aktual dan berat volumetrik.
+Secara umum:
+Air Express menggunakan divisor 5000.
+Air Freight menggunakan divisor 6000.
+Sea Freight menggunakan perhitungan volume (CBM) atau tonase.
+Untuk pengiriman yang membutuhkan kecepatan tinggi, Air Express menjadi pilihan terbaik. Untuk kebutuhan komersial dengan biaya yang lebih efisien, Air Freight sering menjadi solusi yang lebih ekonomis. Sedangkan untuk impor dalam jumlah besar dan pengiriman volume tinggi, Sea Freight merupakan pilihan paling hemat.
+Memahami cara menghitung Chargeable Weight dan karakteristik masing-masing metode pengiriman akan membantu Anda memilih solusi logistik yang paling tepat sesuai kebutuhan bisnis.
+======
+SEO Title:Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight atau Sea Freight
+Meta Description:Pelajari cara menghitung chargeable weight, volumetric weight, CBM, serta perbedaan Air Express, Air Freight, dan Sea Freight untuk memilih metode pengiriman yang paling efisien.

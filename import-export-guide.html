@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Export Guide - GBU Express</title>
+    <meta name="description" content="Panduan lengkap seputar import, export, dan pengiriman barang internasional dari GBU Express.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            padding: 180px 0 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .guide-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .guide-content {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        .guide-content h3 {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .guide-content p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-container" style="text-decoration: none;">
+                    <img src="logo GBU.webp" alt="GBU Express Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);">Guide</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 1rem;">Import Export Guide</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">Kumpulan panduan, tips, dan informasi penting seputar layanan logistik, impor, dan ekspor.</p>
+        </div>
+    </header>
+
+    <!-- Articles Section -->
+    <section class="section">
+        <div class="container">
+            <div class="guide-grid">
+                <!-- Article 1 -->
+                <a href="perbedaan-pengiriman.html" class="guide-card">
+                    <div class="guide-content">
+                        <h3>Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat</h3>
+                        <p>Pelajari perbedaan berbagai metode pengiriman untuk memilih solusi logistik terbaik dan paling efisien bagi bisnis Anda.</p>
+                        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="menghitung-chargeable-weight.html" class="guide-card">
+                    <div class="guide-content">
+                        <h3>Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight, atau Sea Freight</h3>
+                        <p>Pahami cara kerja berat aktual vs volumetrik, dan rumus pembagi 5000 vs 6000 agar Anda bisa menghemat biaya pengiriman kargo.</p>
+                        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Simplified) -->
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding-top: 2rem;">
+                <p>&copy; 2026 GBU Express. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
