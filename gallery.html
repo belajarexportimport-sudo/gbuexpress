@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GBU Express | Galeri Pengiriman</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0b1120;
+    color: #fff;
+}
+header {
+    padding: 20px;
+    background: #08101f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header h2 {
+    margin: 0;
+    color: #3b82f6;
+    letter-spacing: 1px;
+}
+/* Tombol Kembali ke Home di Header */
+.btn-home-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.btn-home-nav:hover {
+    background: #3b82f6;
+    color: #fff;
+    transform: translateY(-1px);
+}
+.hero, .cta {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.hero p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+.gallery-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+.masonry-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px; /* Fixed height for uniform grid */
+}
+.masonry-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.masonry-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Focuses on the top part of screenshots/receipts */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+.masonry-item:hover img {
+    opacity: 0.9;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.lightbox.show img {
+    transform: scale(1);
+}
+.lightbox span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.lightbox span:hover {
+    color: #ef4444;
+}
+.notice {
+    text-align: center;
+    padding: 20px;
+    color: #cbd5e1;
+    font-style: italic;
+}
+/* Section Aksi Tambahan di Bawah Galeri */
+.gallery-actions {
+    text-align: center;
+    margin: 30px 0 50px 0;
+}
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #1e293b;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 1px solid #334155;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    background: #334155;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+    background: #20b858;
+    transform: translateY(-2px);
+}
+.clients {
+    padding: 60px 20px;
+    background: #111827;
+    text-align: center;
+}
+.clients h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+.client-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.client-item {
+    background: #1f2937;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.client-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.client-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.client-item:hover img {
+    transform: scale(1.05);
+}
+footer {
+    padding: 20px;
+    background: #08101f;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div style="background: #08101f;">
+    <header>
+        <h2>GBU Express</h2>
+        <a href="index.html" class="btn-home-nav">← Kembali ke Home</a>
+    </header>
+</div>
+
+<section class="hero">
+    <h1>Galeri Pengiriman & Resi</h1>
+    <p>Bukti nyata kepercayaan pelanggan kami dalam pengiriman barang domestik maupun internasional.</p>
+</section>
+
+<div class="gallery-container">
+    <div class="masonry">
+        <div class="masonry-item"><img src="foto resi dan pengiriman/Laoshan.webp" alt="Resi 1" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/Lekong.webp" alt="Resi 2" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/Rukhin.webp" alt="Resi 3" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/edgar.webp" alt="Resi 4" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/fatim.webp" alt="Resi 5" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/fery.webp" alt="Resi 6" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/habibi.webp" alt="Resi 7" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/hakim.webp" alt="Resi 8" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/jessica.webp" alt="Resi 9" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/jessica2.webp" alt="Resi 10" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/kks.webp" alt="Resi 11" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/tricahyo.webp" alt="Resi 12" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/tricahyo2.webp" alt="Resi 13" onclick="openLightbox(this.src)"></div>
+        <div class="masonry-item"><img src="foto resi dan pengiriman/wangta.webp" alt="Resi 14" onclick="openLightbox(this.src)"></div>
+    </div>
+</div>
+
+<div class="notice">
+    * Privasi pelanggan dijaga dengan baik. Data rahasia pada resi tidak dipublikasikan secara penuh.
+</div>
+
+<div class="gallery-actions">
+    <a href="index.html" class="btn-secondary">← Kembali Utama</a>
+</div>
+
+<section class="clients">
+    <h2>Our Trusted Clients</h2>
+    <div class="client-grid">
+        <div class="client-item"><img src="client/Al Azhar.webp" alt="Al Azhar"></div>
+        <div class="client-item"><img src="client/Java.webp" alt="Java"></div>
+        <div class="client-item"><img src="client/PT Express Box.webp" alt="PT Express Box"></div>
+        <div class="client-item"><img src="client/PT barata sentosa.webp" alt="PT Barata Sentosa"></div>
+        <div class="client-item"><img src="client/UD Ryan Jaya.webp" alt="UD Ryan Jaya"></div>
+        <div class="client-item"><img src="client
