@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik dan Cargo Darat</title>
+    <title data-id="Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik dan Cargo Darat" data-en="Differences Between Air Courier, Air Freight, Sea Freight, Domestic Courier, and Land Cargo">Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik dan Cargo Darat</title>
     <meta name="description" content="Pelajari perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat untuk memilih solusi pengiriman terbaik bagi bisnis Anda.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -100,6 +100,38 @@
         .back-link:hover {
             transform: translateX(-5px);
         }
+        .lang-toggle-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        .lang-toggle-btn {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        .lang-toggle-btn:hover {
+            background: #3b82f6;
+            color: #fff;
+            border-color: #3b82f6;
+        }
+        @media (max-width: 768px) {
+            .lang-toggle-container {
+                margin: 15px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -113,11 +145,16 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);">Guide</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-id="Home" data-en="Home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" data-id="Services" data-en="Services">Services</a></li>
+                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);" data-id="Guide" data-en="Guide">Guide</a></li>
+                <li><a href="index.html#about" class="nav-link" data-id="About" data-en="About">About</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-id="Contact" data-en="Contact">Contact</a></li>
+                <li class="lang-toggle-container">
+                    <button class="lang-toggle-btn" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
+                    </button>
+                </li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
@@ -128,188 +165,197 @@
     <!-- Article Header -->
     <header class="article-header">
         <div class="container">
-            <h1 class="article-title">Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat: Mana yang Tepat untuk Bisnis Anda?</h1>
+            <h1 class="article-title" data-id="Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat: Mana yang Tepat untuk Bisnis Anda?" data-en="Differences Between Air Courier, Air Freight, Sea Freight, Domestic Courier, and Land Cargo: Which One is Right for Your Business?">Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat: Mana yang Tepat untuk Bisnis Anda?</h1>
             <div class="article-meta">
-                <span><i class="far fa-folder"></i> Import Export Guide</span>
-                <span><i class="far fa-clock"></i> 4 min read</span>
+                <span><i class="far fa-folder"></i> <span data-id="Import Export Guide" data-en="Import Export Guide">Import Export Guide</span></span>
+                <span><i class="far fa-clock"></i> <span data-id="4 min read" data-en="4 min read">4 min read</span></span>
             </div>
         </div>
     </header>
 
     <!-- Article Content -->
     <main class="article-content">
-        <a href="import-export-guide.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Panduan</a>
+        <a href="import-export-guide.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> <span data-id="Kembali ke Panduan" data-en="Back to Guide">Kembali ke Panduan</span>
+        </a>
 
-        <p>Dalam dunia logistik dan pengiriman barang, terdapat berbagai metode pengiriman yang dapat disesuaikan dengan kebutuhan, jenis barang, serta anggaran yang tersedia. Namun, banyak pelaku usaha yang masih bingung memilih antara Air Courier, Air Freight, Sea Freight, Kurir Domestik, atau Cargo Darat.</p>
-        <p>Artikel ini akan membantu Anda memahami perbedaan masing-masing layanan agar dapat memilih solusi pengiriman yang paling efisien.</p>
+        <p data-id="Dalam dunia logistik dan pengiriman barang, terdapat berbagai metode pengiriman yang dapat disesuaikan dengan kebutuhan, jenis barang, serta anggaran yang tersedia. Namun, banyak pelaku usaha yang masih bingung memilih antara Air Courier, Air Freight, Sea Freight, Kurir Domestik, atau Cargo Darat." data-en="In the world of logistics and shipping, there are various delivery methods that can be tailored to requirements, cargo types, and available budgets. However, many business owners are still confused about choosing between Air Courier, Air Freight, Sea Freight, Domestic Courier, or Land Cargo.">Dalam dunia logistik dan pengiriman barang, terdapat berbagai metode pengiriman yang dapat disesuaikan dengan kebutuhan, jenis barang, serta anggaran yang tersedia. Namun, many business owners are still confused about choosing between Air Courier, Air Freight, Sea Freight, Domestic Courier, or Land Cargo.</p>
+        
+        <p data-id="Artikel ini akan membantu Anda memahami perbedaan masing-masing layanan agar dapat memilih solusi pengiriman yang paling efisien." data-en="This article will help you understand the differences of each service so you can choose the most efficient shipping solution.">Artikel ini akan membantu Anda memahami perbedaan masing-masing layanan agar dapat memilih solusi pengiriman yang paling efisien.</p>
 
-        <h2>1. Air Courier (Kurir Udara Internasional)</h2>
-        <p>Air Courier merupakan layanan pengiriman internasional yang mengutamakan kecepatan. Barang dikirim melalui jaringan kurir global dan langsung diantarkan ke alamat penerima.</p>
+        <!-- 1. Air Courier -->
+        <h2 data-id="1. Air Courier (Kurir Udara Internasional)" data-en="1. Air Courier (International Air Courier)">1. Air Courier (Kurir Udara Internasional)</h2>
+        <p data-id="Air Courier merupakan layanan pengiriman internasional yang mengutamakan kecepatan. Barang dikirim melalui jaringan kurir global dan langsung diantarkan ke alamat penerima." data-en="Air Courier is an international shipping service that prioritizes speed. Goods are shipped through a global courier network and delivered directly to the recipient's address.">Air Courier merupakan layanan pengiriman internasional yang mengutamakan kecepatan. Barang dikirim melalui jaringan kurir global dan langsung diantarkan ke alamat penerima.</p>
         
-        <h3>Kelebihan:</h3>
+        <h3 data-id="Kelebihan:" data-en="Advantages:">Kelebihan:</h3>
         <ul>
-            <li>Waktu pengiriman sangat cepat</li>
-            <li>Door-to-door service</li>
-            <li>Tracking real-time</li>
-            <li>Cocok untuk dokumen dan paket kecil</li>
+            <li data-id="Waktu pengiriman sangat cepat" data-en="Extremely fast delivery time">Waktu pengiriman sangat cepat</li>
+            <li data-id="Door-to-door service" data-en="Door-to-door service">Door-to-door service</li>
+            <li data-id="Tracking real-time" data-en="Real-time tracking">Tracking real-time</li>
+            <li data-id="Cocok untuk dokumen dan paket kecil" data-en="Suitable for documents and small packages">Cocok untuk dokumen dan paket kecil</li>
         </ul>
         
-        <h3>Kekurangan:</h3>
+        <h3 data-id="Kekurangan:" data-en="Disadvantages:">Kekurangan:</h3>
         <ul>
-            <li>Biaya relatif lebih tinggi</li>
-            <li>Kurang ekonomis untuk barang berukuran besar</li>
+            <li data-id="Biaya relatif lebih tinggi" data-en="Relatively higher costs">Biaya relatif lebih tinggi</li>
+            <li data-id="Kurang ekonomis untuk barang berukuran besar" data-en="Less economical for large items">Kurang ekonomis untuk barang berukuran besar</li>
         </ul>
         
-        <h3>Cocok untuk:</h3>
+        <h3 data-id="Cocok untuk:" data-en="Best for:">Cocok untuk:</h3>
         <ul>
-            <li>Dokumen penting</li>
-            <li>Sampel produk</li>
-            <li>Barang bernilai tinggi</li>
-            <li>Pengiriman yang membutuhkan waktu cepat</li>
-        </ul>
-
-        <h2>2. Air Freight (Kargo Udara)</h2>
-        <p>Air Freight adalah layanan pengiriman barang melalui pesawat kargo yang umumnya digunakan untuk kebutuhan komersial dan bisnis.</p>
-        
-        <h3>Kelebihan:</h3>
-        <ul>
-            <li>Lebih ekonomis dibanding Air Courier untuk volume tertentu</li>
-            <li>Waktu pengiriman cepat</li>
-            <li>Cocok untuk kebutuhan impor dan ekspor</li>
-        </ul>
-        
-        <h3>Kekurangan:</h3>
-        <ul>
-            <li>Proses lebih kompleks dibanding courier</li>
-            <li>Beberapa layanan memerlukan penanganan dokumen tambahan</li>
-        </ul>
-        
-        <h3>Cocok untuk:</h3>
-        <ul>
-            <li>Barang dagangan</li>
-            <li>Spare part</li>
-            <li>Produk elektronik</li>
-            <li>Kebutuhan bisnis yang memerlukan pengiriman cepat</li>
+            <li data-id="Dokumen penting" data-en="Important documents">Dokumen penting</li>
+            <li data-id="Sampel produk" data-en="Product samples">Sampel produk</li>
+            <li data-id="Barang bernilai tinggi" data-en="High-value goods">Barang bernilai tinggi</li>
+            <li data-id="Pengiriman yang membutuhkan waktu cepat" data-en="Shipments that require fast timeframes">Pengiriman yang membutuhkan waktu cepat</li>
         </ul>
 
-        <h2>3. Sea Freight (Kargo Laut)</h2>
-        <p>Sea Freight merupakan metode pengiriman menggunakan kapal laut dan menjadi pilihan paling ekonomis untuk volume besar.</p>
+        <!-- 2. Air Freight -->
+        <h2 data-id="2. Air Freight (Kargo Udara)" data-en="2. Air Freight (Air Cargo)">2. Air Freight (Kargo Udara)</h2>
+        <p data-id="Air Freight adalah layanan pengiriman barang melalui pesawat kargo yang umumnya digunakan untuk kebutuhan komersial dan bisnis." data-en="Air Freight is a cargo shipping service via commercial aircraft or freighters, generally used for commercial and business needs.">Air Freight adalah layanan pengiriman barang melalui pesawat kargo yang umumnya digunakan untuk kebutuhan komersial dan bisnis.</p>
         
-        <h3>Kelebihan:</h3>
+        <h3 data-id="Kelebihan:" data-en="Advantages:">Kelebihan:</h3>
         <ul>
-            <li>Biaya pengiriman paling hemat</li>
-            <li>Kapasitas muatan sangat besar</li>
-            <li>Cocok untuk impor dalam jumlah besar</li>
+            <li data-id="Lebih ekonomis dibanding Air Courier untuk volume tertentu" data-en="More economical than Air Courier for specific volumes">Lebih ekonomis dibanding Air Courier untuk volume tertentu</li>
+            <li data-id="Waktu pengiriman cepat" data-en="Fast delivery time">Waktu pengiriman cepat</li>
+            <li data-id="Cocok untuk kebutuhan impor dan ekspor" data-en="Suitable for import and export requirements">Cocok untuk kebutuhan impor dan ekspor</li>
         </ul>
         
-        <h3>Kekurangan:</h3>
+        <h3 data-id="Kekurangan:" data-en="Disadvantages:">Kekurangan:</h3>
         <ul>
-            <li>Waktu pengiriman lebih lama</li>
-            <li>Membutuhkan perencanaan yang lebih matang</li>
+            <li data-id="Proses lebih kompleks dibanding courier" data-en="More complex procedures compared to courier services">Proses lebih kompleks dibanding courier</li>
+            <li data-id="Beberapa layanan memerlukan penanganan dokumen tambahan" data-en="Certain services require additional document handling">Beberapa layanan memerlukan penanganan dokumen tambahan</li>
         </ul>
         
-        <h3>Cocok untuk:</h3>
+        <h3 data-id="Cocok untuk:" data-en="Best for:">Cocok untuk:</h3>
         <ul>
-            <li>Furniture</li>
-            <li>Mesin industri</li>
-            <li>Material proyek</li>
-            <li>Barang impor dalam jumlah besar</li>
-        </ul>
-        <p><strong>Jenis layanan Sea Freight yang umum digunakan:</strong></p>
-        <ul>
-            <li><strong>LCL (Less Container Load):</strong> berbagi kontainer dengan pengirim lain.</li>
-            <li><strong>FCL (Full Container Load):</strong> menggunakan satu kontainer penuh.</li>
+            <li data-id="Barang dagangan" data-en="Commercial merchandise">Barang dagangan</li>
+            <li data-id="Spare part" data-en="Spare parts">Spare part</li>
+            <li data-id="Produk elektronik" data-en="Electronic products">Produk elektronik</li>
+            <li data-id="Kebutuhan bisnis yang memerlukan pengiriman cepat" data-en="Business demands requiring rapid transit">Kebutuhan bisnis yang memerlukan pengiriman cepat</li>
         </ul>
 
-        <h2>4. Kurir Domestik</h2>
-        <p>Kurir Domestik merupakan layanan pengiriman dalam negeri yang biasa digunakan untuk paket harian maupun kebutuhan e-commerce.</p>
+        <!-- 3. Sea Freight -->
+        <h2 data-id="3. Sea Freight (Kargo Laut)" data-en="3. Sea Freight (Ocean Cargo)">3. Sea Freight (Kargo Laut)</h2>
+        <p data-id="Sea Freight merupakan metode pengiriman menggunakan kapal laut dan menjadi pilihan paling ekonomis untuk volume besar." data-en="Sea Freight is a delivery method utilizing ocean vessels and stands as the most economical option for large volumes.">Sea Freight merupakan metode pengiriman menggunakan kapal laut dan menjadi pilihan paling ekonomis untuk volume besar.</p>
         
-        <h3>Kelebihan:</h3>
+        <h3 data-id="Kelebihan:" data-en="Advantages:">Kelebihan:</h3>
         <ul>
-            <li>Mudah digunakan</li>
-            <li>Jaringan luas</li>
-            <li>Pengiriman relatif cepat</li>
+            <li data-id="Biaya pengiriman paling hemat" data-en="Most budget-friendly shipping costs">Biaya pengiriman paling hemat</li>
+            <li data-id="Kapasitas muatan sangat besar" data-en="Massive cargo capacity">Kapasitas muatan sangat besar</li>
+            <li data-id="Cocok untuk impor dalam jumlah besar" data-en="Ideal for large-scale imports">Cocok untuk impor dalam jumlah besar</li>
         </ul>
         
-        <h3>Kekurangan:</h3>
+        <h3 data-id="Kekurangan:" data-en="Disadvantages:">Kekurangan:</h3>
         <ul>
-            <li>Batas ukuran dan berat tertentu</li>
-            <li>Kurang efisien untuk barang besar</li>
+            <li data-id="Waktu pengiriman lebih lama" data-en="Longer transit times">Waktu pengiriman lebih lama</li>
+            <li data-id="Membutuhkan perencanaan yang lebih matang" data-en="Requires more meticulous planning">Membutuhkan perencanaan yang lebih matang</li>
         </ul>
         
-        <h3>Cocok untuk:</h3>
+        <h3 data-id="Cocok untuk:" data-en="Best for:">Cocok untuk:</h3>
         <ul>
-            <li>Paket retail</li>
-            <li>Penjualan online</li>
-            <li>Dokumen</li>
-            <li>Barang konsumsi sehari-hari</li>
+            <li data-id="Furniture" data-en="Furniture">Furniture</li>
+            <li data-id="Mesin industri" data-en="Industrial machinery">Mesin industri</li>
+            <li data-id="Material proyek" data-en="Project materials">Material proyek</li>
+            <li data-id="Barang impor dalam jumlah besar" data-en="Bulk imported goods">Barang impor dalam jumlah besar</li>
         </ul>
-
-        <h2>5. Cargo Darat (Bulk Cargo Domestik)</h2>
-        <p>Cargo Darat atau Bulk Cargo digunakan untuk pengiriman barang berukuran besar maupun dalam jumlah banyak antar kota dan antar pulau.</p>
-        
-        <h3>Kelebihan:</h3>
+        <p><strong data-id="Jenis layanan Sea Freight yang umum digunakan:" data-en="Common Sea Freight service types:">Jenis layanan Sea Freight yang umum digunakan:</strong></p>
         <ul>
-            <li>Lebih ekonomis untuk volume besar</li>
-            <li>Cocok untuk pengiriman rutin</li>
-            <li>Dapat mengangkut barang berat dan oversized</li>
-        </ul>
-        
-        <h3>Kekurangan:</h3>
-        <ul>
-            <li>Waktu pengiriman lebih lama dibanding kurir reguler</li>
-            <li>Tracking tidak selalu real-time</li>
-        </ul>
-        
-        <h3>Cocok untuk:</h3>
-        <ul>
-            <li>Mesin industri</li>
-            <li>Material bangunan</li>
-            <li>Produk manufaktur</li>
-            <li>Barang proyek</li>
+            <li><strong data-id="LCL (Less Container Load):" data-en="LCL (Less Container Load):">LCL (Less Container Load):</strong> <span data-id="berbagi kontainer dengan pengirim lain." data-en="sharing a container with other shippers.">berbagi kontainer dengan pengirim lain.</span></li>
+            <li><strong data-id="FCL (Full Container Load):" data-en="FCL (Full Container Load):">FCL (Full Container Load):</strong> <span data-id="menggunakan satu kontainer penuh." data-en="utilizing a dedicated full container.">menggunakan satu kontainer penuh.</span></li>
         </ul>
 
-        <h2>Mana yang Harus Dipilih?</h2>
-        <p>Pemilihan metode pengiriman sebaiknya disesuaikan dengan kebutuhan bisnis Anda.</p>
+        <!-- 4. Kurir Domestik -->
+        <h2 data-id="4. Kurir Domestik" data-en="4. Domestic Courier">4. Kurir Domestik</h2>
+        <p data-id="Kurir Domestik merupakan layanan pengiriman dalam negeri yang biasa digunakan untuk paket harian maupun kebutuhan e-commerce." data-en="Domestic Courier is an inland shipping service regularly used for daily parcels and e-commerce deliveries.">Kurir Domestik merupakan layanan pengiriman dalam negeri yang biasa digunakan untuk paket harian maupun kebutuhan e-commerce.</p>
+        
+        <h3 data-id="Kelebihan:" data-en="Advantages:">Kelebihan:</h3>
+        <ul>
+            <li data-id="Mudah digunakan" data-en="Easy to use">Mudah digunakan</li>
+            <li data-id="Jaringan luas" data-en="Extensive network coverage">Jaringan luas</li>
+            <li data-id="Pengiriman relatif cepat" data-en="Relatively fast shipping">Pengiriman relatif cepat</li>
+        </ul>
+        
+        <h3 data-id="Kekurangan:" data-en="Disadvantages:">Kekurangan:</h3>
+        <ul>
+            <li data-id="Batas ukuran dan berat tertentu" data-en="Strict size and weight limits">Batas ukuran dan berat tertentu</li>
+            <li data-id="Kurang efisien untuk barang besar" data-en="Less efficient for oversized commodities">Kurang efisien untuk barang besar</li>
+        </ul>
+        
+        <h3 data-id="Cocok untuk:" data-en="Best for:">Cocok untuk:</h3>
+        <ul>
+            <li data-id="Paket retail" data-en="Retail packages">Paket retail</li>
+            <li data-id="Penjualan online" data-en="Online sales">Penjualan online</li>
+            <li data-id="Dokumen" data-en="Documents">Dokumen</li>
+            <li data-id="Barang konsumsi sehari-hari" data-en="Daily consumer products">Barang konsumsi sehari-hari</li>
+        </ul>
+
+        <!-- 5. Cargo Darat -->
+        <h2 data-id="5. Cargo Darat (Bulk Cargo Domestik)" data-en="5. Land Cargo (Domestic Bulk Cargo)">5. Cargo Darat (Bulk Cargo Domestik)</h2>
+        <p data-id="Cargo Darat atau Bulk Cargo digunakan untuk pengiriman barang berukuran besar maupun dalam jumlah banyak antar kota dan antar pulau." data-en="Land Cargo or Bulk Cargo is utilized for shipping bulky or high-volume goods across cities and islands domestically.">Cargo Darat atau Bulk Cargo digunakan untuk pengiriman barang berukuran besar maupun dalam jumlah banyak antar kota dan antar pulau.</p>
+        
+        <h3 data-id="Kelebihan:" data-en="Advantages:">Kelebihan:</h3>
+        <ul>
+            <li data-id="Lebih ekonomis untuk volume besar" data-en="More cost-effective for large volumes">Lebih ekonomis untuk volume besar</li>
+            <li data-id="Cocok untuk pengiriman rutin" data-en="Excellent for recurring shipments">Cocok untuk pengiriman rutin</li>
+            <li data-id="Dapat mengangkut barang berat dan oversized" data-en="Capable of hauling heavy and oversized freights">Dapat mengangkut barang berat dan oversized</li>
+        </ul>
+        
+        <h3 data-id="Kekurangan:" data-en="Disadvantages:">Kekurangan:</h3>
+        <ul>
+            <li data-id="Waktu pengiriman lebih lama dibanding kurir reguler" data-en="Longer delivery time compared to regular couriers">Waktu pengiriman lebih lama dibanding kurir reguler</li>
+            <li data-id="Tracking tidak selalu real-time" data-en="Tracking is not always real-time">Tracking tidak selalu real-time</li>
+        </ul>
+        
+        <h3 data-id="Cocok untuk:" data-en="Best for:">Cocok untuk:</h3>
+        <ul>
+            <li data-id="Mesin industri" data-en="Industrial machinery">Mesin industri</li>
+            <li data-id="Material bangunan" data-en="Construction materials">Material bangunan</li>
+            <li data-id="Produk manufaktur" data-en="Manufactured goods">Produk manufaktur</li>
+            <li data-id="Barang proyek" data-en="Project inventory">Barang proyek</li>
+        </ul>
+
+        <!-- Comparison Table -->
+        <h2 data-id="Mana yang Harus Dipilih?" data-en="Which One to Choose?">Mana yang Harus Dipilih?</h2>
+        <p data-id="Pemilihan metode pengiriman sebaiknya disesuaikan dengan kebutuhan bisnis Anda." data-en="The ideal shipping method choice should align specifically with your corporate requirements.">Pemilihan metode pengiriman sebaiknya disesuaikan dengan kebutuhan bisnis Anda.</p>
         <div class="article-table-wrap">
             <table class="article-table">
                 <thead>
                     <tr>
-                        <th>Kebutuhan</th>
-                        <th>Layanan yang Direkomendasikan</th>
+                        <th data-id="Kebutuhan" data-en="Business Requirement">Kebutuhan</th>
+                        <th data-id="Layanan yang Direkomendasikan" data-en="Recommended Service">Layanan yang Direkomendasikan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Pengiriman tercepat</td>
-                        <td>Air Courier</td>
+                        <td data-id="Pengiriman tercepat" data-en="Fastest shipping route">Pengiriman tercepat</td>
+                        <td data-id="Air Courier" data-en="Air Courier">Air Courier</td>
                     </tr>
                     <tr>
-                        <td>Pengiriman internasional komersial</td>
-                        <td>Air Freight</td>
+                        <td data-id="Pengiriman internasional komersial" data-en="Commercial international shipment">Pengiriman internasional komersial</td>
+                        <td data-id="Air Freight" data-en="Air Freight">Air Freight</td>
                     </tr>
                     <tr>
-                        <td>Impor volume besar</td>
-                        <td>Sea Freight</td>
+                        <td data-id="Impor volume besar" data-en="High-volume imports">Impor volume besar</td>
+                        <td data-id="Sea Freight" data-en="Sea Freight">Sea Freight</td>
                     </tr>
                     <tr>
-                        <td>Paket dalam negeri</td>
-                        <td>Kurir Domestik</td>
+                        <td data-id="Paket dalam negeri" data-en="Inland package delivery">Paket dalam negeri</td>
+                        <td data-id="Kurir Domestik" data-en="Domestic Courier">Kurir Domestik</td>
                     </tr>
                     <tr>
-                        <td>Barang besar dan berat dalam negeri</td>
-                        <td>Cargo Darat</td>
+                        <td data-id="Barang besar dan berat dalam negeri" data-en="Heavy and large items domestic cargo">Barang besar dan berat dalam negeri</td>
+                        <td data-id="Cargo Darat" data-en="Land Cargo">Cargo Darat</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2>Kesimpulan</h2>
-        <p>Setiap metode pengiriman memiliki keunggulan masing-masing. Air Courier cocok untuk kecepatan, Air Freight untuk kebutuhan bisnis internasional, Sea Freight untuk efisiensi biaya impor, Kurir Domestik untuk pengiriman harian, dan Cargo Darat untuk volume besar di dalam negeri.</p>
-        <p>Jika Anda membutuhkan solusi pengiriman internasional maupun domestik yang aman, cepat, dan terpercaya, tim GBU Express siap membantu memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis Anda.</p>
+        <h2 data-id="Kesimpulan" data-en="Conclusion">Kesimpulan</h2>
+        <p data-id="Setiap metode pengiriman memiliki keunggulan masing-masing. Air Courier cocok untuk kecepatan, Air Freight untuk kebutuhan bisnis internasional, Sea Freight untuk efisiensi biaya impor, Kurir Domestik untuk pengiriman harian, dan Cargo Darat untuk volume besar di dalam negeri." data-en="Each logistics method carries its own respective merits. Air Courier excels in swiftness, Air Freight serves global commercial trades, Sea Freight handles budget-friendly imports, Domestic Courier takes care of daily packages, and Land Cargo manages domestic bulk freights.">Setiap metode pengiriman memiliki keunggulan masing-masing. Air Courier cocok untuk kecepatan, Air Freight untuk kebutuhan bisnis internasional, Sea Freight untuk efisiensi biaya impor, Kurir Domestik untuk pengiriman harian, dan Cargo Darat untuk volume besar di dalam negeri.</p>
+        <p data-id="Jika Anda membutuhkan solusi pengiriman internasional maupun domestik yang aman, cepat, dan terpercaya, tim GBU Express siap membantu memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis Anda." data-en="Should you require safe, fast, and dependable global or domestic delivery solutions, the GBU Express team stands ready to assist in picking the absolute best logistics scheme for your operational demands.">Jika Anda membutuhkan solusi pengiriman internasional maupun domestik yang aman, cepat, dan terpercaya, tim GBU Express siap membantu memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis Anda.</p>
     </main>
 
-    <!-- Footer (Simplified) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div style="text-align: center; padding-top: 2rem;">
@@ -319,5 +365,30 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Script Pengaturan Bahasa Otomatis -->
+    <script>
+        let currentLang = localStorage.getItem('gbu_lang') || 'id';
+
+        function updateDOMText() {
+            const translatableElements = document.querySelectorAll('[data-id][data-en]');
+            
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('gbu_lang', currentLang);
+            updateDOMText();
+        }
+
+        document.addEventListener("DOMContentLoaded", updateDOMText);
+    </script>
 </body>
+
 </html>

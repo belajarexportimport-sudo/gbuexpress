@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight atau Sea Freight</title>
+    <title data-id="Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight atau Sea Freight" data-en="How to Calculate Chargeable Weight and Choosing Between Air Express, Air Freight, or Sea Freight">Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight atau Sea Freight</title>
     <meta name="description" content="Pelajari cara menghitung chargeable weight, volumetric weight, CBM, serta perbedaan Air Express, Air Freight, dan Sea Freight untuk memilih metode pengiriman yang paling efisien.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -110,6 +110,38 @@
         .back-link:hover {
             transform: translateX(-5px);
         }
+        .lang-toggle-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        .lang-toggle-btn {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        .lang-toggle-btn:hover {
+            background: #3b82f6;
+            color: #fff;
+            border-color: #3b82f6;
+        }
+        @media (max-width: 768px) {
+            .lang-toggle-container {
+                margin: 15px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -123,11 +155,17 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);">Guide</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-id="Home" data-en="Home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" data-id="Services" data-en="Services">Services</a></li>
+                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);" data-id="Guide" data-en="Guide">Guide</a></li>
+                <li><a href="gallery.html" class="nav-link" data-id="Gallery" data-en="Gallery">Gallery</a></li>
+                <li><a href="index.html#about" class="nav-link" data-id="About" data-en="About">About</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-id="Contact" data-en="Contact">Contact</a></li>
+                <li class="lang-toggle-container">
+                    <button class="lang-toggle-btn" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
+                    </button>
+                </li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
@@ -138,206 +176,210 @@
     <!-- Article Header -->
     <header class="article-header">
         <div class="container">
-            <h1 class="article-title">Cara Menghitung Chargeable Weight dan Memilih antara Air Express, Air Freight, atau Sea Freight</h1>
+            <h1 class="article-title" data-id="Cara Menghitung Chargeable Weight dan Memilih antara Air Express, Air Freight, atau Sea Freight" data-en="How to Calculate Chargeable Weight and Choosing Between Air Express, Air Freight, or Sea Freight">Cara Menghitung Chargeable Weight dan Memilih antara Air Express, Air Freight, atau Sea Freight</h1>
             <div class="article-meta">
-                <span><i class="far fa-folder"></i> Import Export Guide</span>
-                <span><i class="far fa-clock"></i> 5 min read</span>
+                <span><i class="far fa-folder"></i> <span data-id="Import Export Guide" data-en="Import Export Guide">Import Export Guide</span></span>
+                <span><i class="far fa-clock"></i> <span data-id="5 min read" data-en="5 min read">5 min read</span></span>
             </div>
         </div>
     </header>
 
     <!-- Article Content -->
     <main class="article-content">
-        <a href="import-export-guide.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Panduan</a>
+        <a href="import-export-guide.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> <span data-id="Kembali ke Panduan" data-en="Back to Guide">Kembali ke Panduan</span>
+        </a>
 
-        <p>Dalam dunia logistik internasional, salah satu hal yang paling sering membingungkan pelanggan adalah mengapa biaya pengiriman tidak selalu dihitung berdasarkan berat barang yang terlihat di timbangan.</p>
-        <p>Tidak jarang sebuah paket dengan berat hanya 15 kg dikenakan biaya pengiriman setara 25 kg atau bahkan lebih. Hal ini terjadi karena perusahaan logistik menggunakan sistem yang disebut <strong>Chargeable Weight</strong> atau berat tagihan.</p>
-        <p>Memahami Chargeable Weight sangat penting bagi importir, eksportir, pelaku UMKM, maupun perusahaan yang rutin melakukan pengiriman internasional. Dengan memahami cara perhitungannya, Anda dapat memperkirakan biaya logistik dengan lebih akurat dan memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis.</p>
+        <p data-id="Dalam dunia logistik internasional, salah satu hal yang paling sering membingungkan pelanggan adalah mengapa biaya pengiriman tidak selalu dihitung berdasarkan berat barang yang terlihat di timbangan." data-en="In the world of international logistics, one of the most common things that confuses customers is why shipping costs are not always calculated based on the actual weight seen on the scale.">Dalam dunia logistik internasional, salah satu hal yang paling sering membingungkan pelanggan adalah mengapa biaya pengiriman tidak selalu dihitung berdasarkan berat barang yang terlihat di timbangan.</p>
+        
+        <p data-id="Tidak jarang sebuah paket dengan berat hanya 15 kg dikenakan biaya pengiriman setara 25 kg atau bahkan lebih. Hal ini terjadi karena perusahaan logistik menggunakan sistem yang disebut Chargeable Weight atau berat tagihan." data-en="It is not uncommon for a package weighing only 15 kg to be charged a shipping cost equivalent to 25 kg or even more. This happens because logistics companies use a system called Chargeable Weight.">Tidak jarang sebuah paket dengan berat hanya 15 kg dikenakan biaya pengiriman setara 25 kg atau bahkan lebih. Hal ini terjadi karena perusahaan logistik menggunakan sistem yang disebut <strong>Chargeable Weight</strong> atau berat tagihan.</p>
+        
+        <p data-id="Memahami Chargeable Weight sangat penting bagi importir, eksportir, pelaku UMKM, maupun perusahaan yang rutin melakukan pengiriman internasional. Dengan memahami cara perhitungannya, Anda dapat memperkirakan biaya logistik dengan lebih akurat dan memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis." data-en="Understanding Chargeable Weight is crucial for importers, exporters, MSMEs, and companies that regularly ship internationally. By understanding how it is calculated, you can estimate logistics costs more accurately and choose the most suitable shipping method for your business needs.">Memahami Chargeable Weight sangat penting bagi importir, eksportir, pelaku UMKM, maupun perusahaan yang rutin melakukan pengiriman internasional. Dengan memahami cara perhitungannya, Anda dapat memperkirakan biaya logistik dengan lebih akurat dan memilih metode pengiriman yang paling sesuai dengan kebutuhan bisnis.</p>
 
-        <h2>Apa Itu Chargeable Weight?</h2>
-        <p>Chargeable Weight adalah berat yang digunakan sebagai dasar perhitungan biaya pengiriman. Perusahaan pengiriman akan membandingkan dua nilai:</p>
+        <h2 data-id="Apa Itu Chargeable Weight?" data-en="What is Chargeable Weight?">Apa Itu Chargeable Weight?</h2>
+        <p data-id="Chargeable Weight adalah berat yang digunakan sebagai dasar perhitungan biaya pengiriman. Perusahaan pengiriman akan membandingkan dua nilai:" data-en="Chargeable Weight is the weight used as the basis for calculating shipping costs. The shipping company will compare two values:">Chargeable Weight adalah berat yang digunakan sebagai dasar perhitungan biaya pengiriman. Perusahaan pengiriman akan membandingkan dua nilai:</p>
         <ul>
-            <li><strong>Actual Weight</strong> (Berat Aktual)</li>
-            <li><strong>Volumetric Weight</strong> (Berat Volume)</li>
+            <li><strong data-id="Actual Weight (Berat Aktual)" data-en="Actual Weight (Physical Weight)">Actual Weight</strong> (<span data-id="Berat Aktual" data-en="Actual Weight">Berat Aktual</span>)</li>
+            <li><strong data-id="Volumetric Weight (Berat Volume)" data-en="Volumetric Weight (Volume Weight)">Volumetric Weight</strong> (<span data-id="Berat Volume" data-en="Volumetric Weight">Berat Volume</span>)</li>
         </ul>
-        <p>Nilai yang lebih besar akan digunakan sebagai Chargeable Weight.</p>
-        <p><strong>Sebagai contoh:</strong></p>
+        <p data-id="Nilai yang lebih besar akan digunakan sebagai Chargeable Weight." data-en="The larger value will be used as the Chargeable Weight.">Nilai yang lebih besar akan digunakan sebagai Chargeable Weight.</p>
+        <p><strong data-id="Sebagai contoh:" data-en="For example:">Sebagai contoh:</strong></p>
         <ul>
-            <li>Berat Aktual: 18 kg</li>
-            <li>Berat Volumetrik: 25 kg</li>
+            <li data-id="Berat Aktual: 18 kg" data-en="Actual Weight: 18 kg">Berat Aktual: 18 kg</li>
+            <li data-id="Berat Volumetrik: 25 kg" data-en="Volumetric Weight: 25 kg">Berat Volumetrik: 25 kg</li>
         </ul>
-        <p>Maka biaya pengiriman akan dihitung berdasarkan <strong>25 kg</strong>.</p>
+        <p data-id="Maka biaya pengiriman akan dihitung berdasarkan 25 kg." data-en="Therefore, the shipping cost will be calculated based on 25 kg.">Maka biaya pengiriman akan dihitung berdasarkan <strong>25 kg</strong>.</p>
 
-        <h2>Apa Itu Actual Weight?</h2>
-        <p>Actual Weight adalah berat fisik barang yang diukur menggunakan timbangan.</p>
-        <p><strong>Contoh:</strong><br>Satu karton berisi produk elektronik memiliki berat aktual sebesar 20 kg. Maka Actual Weight yang digunakan adalah 20 kg.</p>
+        <h2 data-id="Apa Itu Actual Weight?" data-en="What is Actual Weight?">Apa Itu Actual Weight?</h2>
+        <p data-id="Actual Weight adalah berat fisik barang yang diukur menggunakan timbangan." data-en="Actual Weight is the physical weight of the goods measured using a scale.">Actual Weight adalah berat fisik barang yang diukur menggunakan timbangan.</p>
+        <p><strong><span data-id="Contoh:" data-en="Example:">Contoh:</span></strong><br><span data-id="Satu karton berisi produk elektronik memiliki berat aktual sebesar 20 kg. Maka Actual Weight yang digunakan adalah 20 kg." data-en="A carton containing electronic products has an actual weight of 20 kg. Therefore, the Actual Weight used is 20 kg.">Satu karton berisi produk elektronik memiliki berat aktual sebesar 20 kg. Maka Actual Weight yang digunakan adalah 20 kg.</span></p>
 
-        <h2>Apa Itu Volumetric Weight?</h2>
-        <p>Volumetric Weight atau berat volume adalah metode perhitungan berdasarkan ruang yang ditempati barang selama proses pengiriman.</p>
-        <p>Barang yang ringan namun berukuran besar tetap memakan ruang yang signifikan di pesawat atau kendaraan pengangkut. Oleh karena itu perusahaan logistik juga memperhitungkan volume barang. Semakin besar dimensi barang, semakin besar pula berat volumetriknya.</p>
+        <h2 data-id="Apa Itu Volumetric Weight?" data-en="What is Volumetric Weight?">Apa Itu Volumetric Weight?</h2>
+        <p data-id="Volumetric Weight atau berat volume adalah metode perhitungan berdasarkan ruang yang ditempati barang selama proses pengiriman." data-en="Volumetric Weight is a calculation method based on the space occupied by the goods during the shipping process.">Volumetric Weight atau berat volume adalah metode perhitungan berdasarkan ruang yang ditempati barang selama proses pengiriman.</p>
+        <p data-id="Barang yang ringan namun berukuran besar tetap memakan ruang yang signifikan di pesawat atau kendaraan pengangkut. Oleh karena itu perusahaan logistik juga memperhitungkan volume barang. Semakin besar dimensi barang, semakin besar pula berat volumetriknya." data-en="Light but large items still take up significant space in an aircraft or transport vehicle. Therefore, logistics companies also take the volume of goods into account. The larger the dimensions of the items, the larger the volumetric weight will be.">Barang yang ringan namun berukuran besar tetap memakan ruang yang signifikan di pesawat atau kendaraan pengangkut. Oleh karena itu perusahaan logistik juga memperhitungkan volume barang. Semakin besar dimensi barang, semakin besar pula berat volumetriknya.</p>
 
-        <h2>Cara Menghitung Chargeable Weight untuk Air Freight</h2>
-        <p>Pada pengiriman Air Freight, rumus yang umum digunakan adalah:</p>
-        <div class="formula-box">
+        <h2 data-id="Cara Menghitung Chargeable Weight untuk Air Freight" data-en="How to Calculate Chargeable Weight for Air Freight">Cara Menghitung Chargeable Weight untuk Air Freight</h2>
+        <p data-id="Pada pengiriman Air Freight, rumus yang umum digunakan adalah:" data-en="For Air Freight shipments, the commonly used formula is:">Pada pengiriman Air Freight, rumus yang umum digunakan adalah:</p>
+        <div class="formula-box" data-id="Chargeable Weight (kg) = (Panjang cm x Lebar cm x Tinggi cm) / 6000" data-en="Chargeable Weight (kg) = (Length cm x Width cm x Height cm) / 6000">
             Chargeable Weight (kg) = (Panjang cm x Lebar cm x Tinggi cm) / 6000
         </div>
-        <h3>Contoh Perhitungan</h3>
-        <p>Ukuran karton:</p>
+        <h3 data-id="Contoh Perhitungan" data-en="Calculation Example">Contoh Perhitungan</h3>
+        <p data-id="Ukuran karton:" data-en="Carton size:">Ukuran karton:</p>
         <ul>
-            <li>Panjang: 60 cm</li>
-            <li>Lebar: 50 cm</li>
-            <li>Tinggi: 40 cm</li>
+            <li data-id="Panjang: 60 cm" data-en="Length: 60 cm">Panjang: 60 cm</li>
+            <li data-id="Lebar: 50 cm" data-en="Width: 50 cm">Lebar: 50 cm</li>
+            <li data-id="Tinggi: 40 cm" data-en="Height: 40 cm">Tinggi: 40 cm</li>
         </ul>
-        <p><strong>Perhitungan:</strong><br>(60 x 50 x 40) / 6000 = 20 kg<br>Berat Volumetrik = 20 kg</p>
-        <p>Jika berat aktual barang adalah 15 kg, maka <strong>Chargeable Weight = 20 kg</strong>, karena nilai volumetrik lebih besar daripada berat aktual.</p>
+        <p><strong><span data-id="Perhitungan:" data-en="Calculation:">Perhitungan:</span></strong><br>(60 x 50 x 40) / 6000 = 20 kg<br><span data-id="Berat Volumetrik = 20 kg" data-en="Volumetric Weight = 20 kg">Berat Volumetrik = 20 kg</span></p>
+        <p data-id="Jika berat aktual barang adalah 15 kg, maka Chargeable Weight = 20 kg, karena nilai volumetrik lebih besar daripada berat aktual." data-en="If the actual weight of the goods is 15 kg, then the Chargeable Weight = 20 kg, because the volumetric value is greater than the actual weight.">Jika berat aktual barang adalah 15 kg, maka <strong>Chargeable Weight = 20 kg</strong>, karena nilai volumetrik lebih besar daripada berat aktual.</p>
 
-        <h2>Cara Menghitung Chargeable Weight untuk Air Express</h2>
-        <p>Layanan Air Express seperti DHL Express, FedEx, UPS, TNT, dan kurir ekspres internasional lainnya biasanya menggunakan pembagi (divisor) yang berbeda.</p>
-        <div class="formula-box">
+        <h2 data-id="Cara Menghitung Chargeable Weight untuk Air Express" data-en="How to Calculate Chargeable Weight for Air Express">Cara Menghitung Chargeable Weight untuk Air Express</h2>
+        <p data-id="Layanan Air Express seperti DHL Express, FedEx, UPS, TNT, dan kurir ekspres internasional lainnya biasanya menggunakan pembagi (divisor) yang berbeda." data-en="Air Express services such as DHL Express, FedEx, UPS, TNT, and other international express couriers usually use a different divisor.">Layanan Air Express seperti DHL Express, FedEx, UPS, TNT, dan kurir ekspres internasional lainnya biasanya menggunakan pembagi (divisor) yang berbeda.</p>
+        <div class="formula-box" data-id="Chargeable Weight (kg) = (Panjang cm x Lebar cm x Tinggi cm) / 5000" data-en="Chargeable Weight (kg) = (Length cm x Width cm x Height cm) / 5000">
             Chargeable Weight (kg) = (Panjang cm x Lebar cm x Tinggi cm) / 5000
         </div>
-        <h3>Contoh Perhitungan</h3>
-        <p>Ukuran karton:</p>
+        <h3 data-id="Contoh Perhitungan" data-en="Calculation Example">Contoh Perhitungan</h3>
+        <p data-id="Ukuran karton:" data-en="Carton size:">Ukuran karton:</p>
         <ul>
-            <li>Panjang: 60 cm</li>
-            <li>Lebar: 50 cm</li>
-            <li>Tinggi: 40 cm</li>
+            <li data-id="Panjang: 60 cm" data-en="Length: 60 cm">Panjang: 60 cm</li>
+            <li data-id="Lebar: 50 cm" data-en="Width: 50 cm">Lebar: 50 cm</li>
+            <li data-id="Tinggi: 40 cm" data-en="Height: 40 cm">Tinggi: 40 cm</li>
         </ul>
-        <p><strong>Perhitungan:</strong><br>(60 x 50 x 40) / 5000 = 24 kg<br>Berat Volumetrik = 24 kg</p>
-        <p>Jika berat aktual barang hanya 15 kg, maka biaya pengiriman akan dihitung berdasarkan <strong>24 kg</strong>.</p>
+        <p><strong><span data-id="Perhitungan:" data-en="Calculation:">Perhitungan:</span></strong><br>(60 x 50 x 40) / 5000 = 24 kg<br><span data-id="Berat Volumetrik = 24 kg" data-en="Volumetric Weight = 24 kg">Berat Volumetrik = 24 kg</span></p>
+        <p data-id="Jika berat aktual barang hanya 15 kg, maka biaya pengiriman akan dihitung berdasarkan 24 kg." data-en="If the actual weight of the goods is only 15 kg, then the shipping cost will be calculated based on 24 kg.">Jika berat aktual barang hanya 15 kg, maka biaya pengiriman akan dihitung berdasarkan <strong>24 kg</strong>.</p>
 
-        <h2>Mengapa Air Express dan Air Freight Berbeda?</h2>
-        <p>Perbedaan utama terletak pada model bisnis dan pemanfaatan kapasitas kargo.</p>
+        <h2 data-id="Mengapa Air Express dan Air Freight Berbeda?" data-en="Why Are Air Express and Air Freight Different?">Mengapa Air Express dan Air Freight Berbeda?</h2>
+        <p data-id="Perbedaan utama terletak pada model bisnis dan pemanfaatan kapasitas kargo." data-en="The main difference lies in the business model and cargo capacity utilization.">Perbedaan utama terletak pada model bisnis dan pemanfaatan kapasitas kargo.</p>
         
-        <h3>Air Express</h3>
-        <p><strong>Contoh layanan:</strong> DHL Express, FedEx, UPS, TNT</p>
-        <p><strong>Karakteristik:</strong></p>
+        <h3 data-id="Air Express" data-en="Air Express">Air Express</h3>
+        <p><strong><span data-id="Contoh layanan:" data-en="Service examples:">Contoh layanan:</span></strong> DHL Express, FedEx, UPS, TNT</p>
+        <p><strong><span data-id="Karakteristik:" data-en="Characteristics:">Karakteristik:</span></strong></p>
         <ul>
-            <li>Pengiriman sangat cepat</li>
-            <li>Door-to-door</li>
-            <li>Tracking real-time</li>
-            <li>Penanganan lebih praktis</li>
-            <li>Cocok untuk dokumen dan paket kecil</li>
+            <li data-id="Pengiriman sangat cepat" data-en="Extremely fast delivery">Pengiriman sangat cepat</li>
+            <li data-id="Door-to-door" data-en="Door-to-door delivery">Door-to-door</li>
+            <li data-id="Tracking real-time" data-en="Real-time tracking">Tracking real-time</li>
+            <li data-id="Penanganan lebih praktis" data-en="More convenient handling">Penanganan lebih praktis</li>
+            <li data-id="Cocok untuk dokumen dan paket kecil" data-en="Suitable for documents and small packages">Cocok untuk dokumen dan paket kecil</li>
         </ul>
-        <p>Karena umumnya menggunakan divisor 5000, berat volumetrik cenderung lebih besar sehingga biaya pengiriman biasanya lebih tinggi.</p>
+        <p data-id="Karena umumnya menggunakan divisor 5000, berat volumetrik cenderung lebih besar sehingga biaya pengiriman biasanya lebih tinggi." data-en="Since a 5000 divisor is commonly used, the volumetric weight tends to be larger, making shipping costs generally higher.">Karena umumnya menggunakan divisor 5000, berat volumetrik cenderung lebih besar sehingga biaya pengiriman biasanya lebih tinggi.</p>
 
-        <h3>Air Freight</h3>
-        <p><strong>Contoh layanan:</strong> Freight Forwarder Internasional, Konsolidasi Cargo Udara, Pengiriman Komersial Internasional</p>
-        <p><strong>Karakteristik:</strong></p>
+        <h3 data-id="Air Freight" data-en="Air Freight">Air Freight</h3>
+        <p><strong><span data-id="Contoh layanan:" data-en="Service examples:">Contoh layanan:</span></strong> <span data-id="Freight Forwarder Internasional, Konsolidasi Cargo Udara, Pengiriman Komersial Internasional" data-en="International Freight Forwarders, Air Cargo Consolidation, International Commercial Shipping">Freight Forwarder Internasional, Konsolidasi Cargo Udara, Pengiriman Komersial Internasional</span></p>
+        <p><strong><span data-id="Karakteristik:" data-en="Characteristics:">Karakteristik:</span></strong></p>
         <ul>
-            <li>Lebih ekonomis dibanding Air Express</li>
-            <li>Cocok untuk pengiriman komersial</li>
-            <li>Fleksibel untuk volume lebih besar</li>
-            <li>Ideal untuk kebutuhan impor dan ekspor</li>
+            <li data-id="Lebih ekonomis dibanding Air Express" data-en="More economical than Air Express">Lebih ekonomis dibanding Air Express</li>
+            <li data-id="Cocok untuk pengiriman komersial" data-en="Suitable for commercial shipments">Cocok untuk pengiriman komersial</li>
+            <li data-id="Fleksibel untuk volume lebih besar" data-en="Flexible for larger volumes">Fleksibel untuk volume lebih besar</li>
+            <li data-id="Ideal untuk kebutuhan impor dan ekspor" data-en="Ideal for import and export needs">Ideal untuk kebutuhan impor dan ekspor</li>
         </ul>
-        <p>Karena umumnya menggunakan divisor 6000, Chargeable Weight biasanya lebih rendah dibanding Air Express untuk ukuran barang yang sama.</p>
+        <p data-id="Karena umumnya menggunakan divisor 6000, Chargeable Weight biasanya lebih rendah dibanding Air Express untuk ukuran barang yang sama." data-en="Since a 6000 divisor is commonly used, the Chargeable Weight is usually lower than Air Express for items of the same size.">Karena umumnya menggunakan divisor 6000, Chargeable Weight biasanya lebih rendah dibanding Air Express untuk ukuran barang yang sama.</p>
 
-        <h2>Bagaimana Perhitungan pada Sea Freight?</h2>
-        <p>Berbeda dengan pengiriman udara, Sea Freight tidak menggunakan sistem Chargeable Weight seperti Air Express maupun Air Freight.</p>
-        <p>Pada pengiriman laut, dasar perhitungan biaya biasanya menggunakan:</p>
+        <h2 data-id="Bagaimana Perhitungan pada Sea Freight?" data-en="How is Sea Freight Calculated?">Bagaimana Perhitungan pada Sea Freight?</h2>
+        <p data-id="Berbeda dengan pengiriman udara, Sea Freight tidak menggunakan sistem Chargeable Weight seperti Air Express maupun Air Freight." data-en="Unlike air freight, Sea Freight does not use a Chargeable Weight system like Air Express or Air Freight.">Berbeda dengan pengiriman udara, Sea Freight tidak menggunakan sistem Chargeable Weight seperti Air Express maupun Air Freight.</p>
+        <p data-id="Pada pengiriman laut, dasar perhitungan biaya biasanya menggunakan:" data-en="For ocean freight, the basis of cost calculation typically uses:">Pada pengiriman laut, dasar perhitungan biaya biasanya menggunakan:</p>
         <ul>
-            <li>CBM (Cubic Meter)</li>
-            <li>Berat Aktual (Tonase)</li>
-            <li>Sistem W/M (Weight Measurement)</li>
+            <li data-id="CBM (Cubic Meter)" data-en="CBM (Cubic Meter)">CBM (Cubic Meter)</li>
+            <li data-id="Berat Aktual (Tonase)" data-en="Actual Weight (Tonnage)">Berat Aktual (Tonase)</li>
+            <li data-id="Sistem W/M (Weight Measurement)" data-en="W/M System (Weight Measurement)">Sistem W/M (Weight Measurement)</li>
         </ul>
 
-        <h3>Apa Itu CBM?</h3>
-        <p>CBM (Cubic Meter) adalah satuan volume yang digunakan dalam pengiriman laut.</p>
-        <div class="formula-box">
+        <h3 data-id="Apa Itu CBM?" data-en="What is CBM?">Apa Itu CBM?</h3>
+        <p data-id="CBM (Cubic Meter) adalah satuan volume yang digunakan dalam pengiriman laut." data-en="CBM (Cubic Meter) is the unit of volume used in ocean freight.">CBM (Cubic Meter) adalah satuan volume yang digunakan dalam pengiriman laut.</p>
+        <div class="formula-box" data-id="Rumus: Panjang (m) x Lebar (m) x Tinggi (m)" data-en="Formula: Length (m) x Width (m) x Height (m)">
             Rumus: Panjang (m) x Lebar (m) x Tinggi (m)
         </div>
-        <p><strong>Contoh Ukuran barang:</strong> Panjang 1 m, Lebar 0.8 m, Tinggi 0.5 m</p>
-        <p><strong>Perhitungan:</strong> 1 x 0.8 x 0.5 = <strong>0.4 CBM</strong></p>
+        <p><strong><span data-id="Contoh Ukuran barang:" data-en="Item Size Example:">Contoh Ukuran barang:</span></strong> <span data-id="Panjang 1 m, Lebar 0.8 m, Tinggi 0.5 m" data-en="Length 1 m, Width 0.8 m, Height 0.5 m">Panjang 1 m, Lebar 0.8 m, Tinggi 0.5 m</span></p>
+        <p><strong><span data-id="Perhitungan:" data-en="Calculation:">Perhitungan:</span></strong> 1 x 0.8 x 0.5 = <strong>0.4 CBM</strong></p>
 
-        <h3>Apa Itu Sistem W/M (Weight Measurement)?</h3>
-        <p>Dalam pengiriman laut dikenal istilah W/M atau Weight Measurement. Artinya perusahaan pelayaran akan membandingkan <strong>Berat barang</strong> dan <strong>Volume barang</strong>, kemudian menggunakan nilai yang menghasilkan biaya lebih besar.</p>
-        <p>Sebagai panduan umum: <strong>1 CBM ≈ 1 Ton (1000 kg)</strong></p>
-        <p><strong>Contoh:</strong> Berat aktual = 300 kg, Volume = 1.2 CBM. Karena volume (1.2 Ton ekuivalen) lebih besar daripada berat aktualnya (0.3 Ton), maka biaya biasanya dihitung berdasarkan 1.2 CBM.</p>
+        <h3 data-id="Apa Itu Sistem W/M (Weight Measurement)?" data-en="What is the W/M (Weight Measurement) System?">Apa Itu Sistem W/M (Weight Measurement)?</h3>
+        <p data-id="Dalam pengiriman laut dikenal istilah W/M atau Weight Measurement. Artinya perusahaan pelayaran akan membandingkan Berat barang dan Volume barang, kemudian menggunakan nilai yang menghasilkan biaya lebih besar." data-en="In ocean shipping, the term W/M or Weight Measurement is well known. It means the shipping line will compare the Weight and Volume of the goods, then apply whichever value generates a higher cost.">Dalam pengiriman laut dikenal istilah W/M atau Weight Measurement. Artinya perusahaan pelayaran akan membandingkan <strong>Berat barang</strong> dan <strong>Volume barang</strong>, kemudian menggunakan nilai yang menghasilkan biaya lebih besar.</p>
+        <p data-id="Sebagai panduan umum: 1 CBM ≈ 1 Ton (1000 kg)" data-en="As a general rule: 1 CBM ≈ 1 Ton (1000 kg)">Sebagai panduan umum: <strong>1 CBM ≈ 1 Ton (1000 kg)</strong></p>
+        <p data-id="Contoh: Berat aktual = 300 kg, Volume = 1.2 CBM. Karena volume (1.2 Ton ekuivalen) lebih besar daripada berat aktualnya (0.3 Ton), maka biaya biasanya dihitung berdasarkan 1.2 CBM." data-en="Example: Actual weight = 300 kg, Volume = 1.2 CBM. Since the volume (equivalent to 1.2 Tons) is larger than its actual weight (0.3 Tons), the cost is normally calculated based on 1.2 CBM."><strong>Contoh:</strong> Berat aktual = 300 kg, Volume = 1.2 CBM. Karena volume (1.2 Ton ekuivalen) lebih besar daripada berat aktualnya (0.3 Ton), maka biaya biasanya dihitung berdasarkan 1.2 CBM.</p>
 
-        <h2>Kapan Sebaiknya Menggunakan...</h2>
+        <h2 data-id="Kapan Sebaiknya Menggunakan..." data-en="When is it Best to Use...">Kapan Sebaiknya Menggunakan...</h2>
         
-        <h3>Air Express</h3>
+        <h3 data-id="Air Express" data-en="Air Express">Air Express</h3>
         <ul>
-            <li>Cocok untuk: Dokumen penting, sampel produk, barang bernilai tinggi, barang dengan kebutuhan pengiriman sangat cepat.</li>
-            <li>Estimasi transit: 2 - 7 hari kerja</li>
+            <li data-id="Cocok untuk: Dokumen penting, sampel produk, barang bernilai tinggi, barang dengan kebutuhan pengiriman sangat cepat." data-en="Best for: Urgent documents, product samples, high-value goods, items requiring extremely fast delivery.">Cocok untuk: Dokumen penting, sampel produk, barang bernilai tinggi, barang dengan kebutuhan pengiriman sangat cepat.</li>
+            <li data-id="Estimasi transit: 2 - 7 hari kerja" data-en="Estimated transit: 2 - 7 working days">Estimasi transit: 2 - 7 hari kerja</li>
         </ul>
 
-        <h3>Air Freight</h3>
+        <h3 data-id="Air Freight" data-en="Air Freight">Air Freight</h3>
         <ul>
-            <li>Cocok untuk: Barang dagangan, spare part, produk elektronik, barang komersial, kebutuhan impor dan ekspor reguler.</li>
-            <li>Estimasi transit: 3 - 10 hari kerja</li>
-            <li>Biaya biasanya lebih ekonomis dibanding Air Express.</li>
+            <li data-id="Cocok untuk: Barang dagangan, spare part, produk elektronik, barang komersial, kebutuhan impor dan ekspor reguler." data-en="Best for: Commercial cargo, spare parts, electronic products, general merchandise, regular import and export needs.">Cocok untuk: Barang dagangan, spare part, produk elektronik, barang komersial, kebutuhan impor dan ekspor reguler.</li>
+            <li data-id="Estimasi transit: 3 - 10 hari kerja" data-en="Estimated transit: 3 - 10 working days">Estimasi transit: 3 - 10 hari kerja</li>
+            <li data-id="Biaya biasanya lebih ekonomis dibanding Air Express." data-en="Costs are typically more economical compared to Air Express.">Biaya biasanya lebih ekonomis dibanding Air Express.</li>
         </ul>
 
-        <h3>Sea Freight</h3>
+        <h3 data-id="Sea Freight" data-en="Sea Freight">Sea Freight</h3>
         <ul>
-            <li>Cocok untuk: Impor barang dari China, mesin industri, furniture, material proyek, barang dengan volume besar.</li>
-            <li>Estimasi transit: 15 - 40 hari tergantung negara asal dan tujuan.</li>
-            <li>Biaya per kilogram biasanya jauh lebih rendah dibanding pengiriman udara.</li>
+            <li data-id="Cocok untuk: Impor barang dari China, mesin industri, furniture, material proyek, barang dengan volume besar." data-en="Best for: Importing items from China, industrial machinery, furniture, project materials, high-volume cargo.">Cocok untuk: Impor barang dari China, mesin industri, furniture, material proyek, barang dengan volume besar.</li>
+            <li data-id="Estimasi transit: 15 - 40 hari tergantung negara asal dan tujuan." data-en="Estimated transit: 15 - 40 days depending on origin and destination countries.">Estimasi transit: 15 - 40 hari tergantung negara asal dan tujuan.</li>
+            <li data-id="Biaya per kilogram biasanya jauh lebih rendah dibanding pengiriman udara." data-en="Cost per kilogram is usually much lower than air shipping.">Biaya per kilogram biasanya jauh lebih rendah dibanding pengiriman udara.</li>
         </ul>
 
-        <h2>Perbandingan Air Express, Air Freight, dan Sea Freight</h2>
+        <h2 data-id="Perbandingan Air Express, Air Freight, dan Sea Freight" data-en="Comparison of Air Express, Air Freight, and Sea Freight">Perbandingan Air Express, Air Freight, dan Sea Freight</h2>
         <div class="article-table-wrap">
             <table class="article-table">
                 <thead>
                     <tr>
-                        <th>Faktor</th>
-                        <th>Air Express</th>
-                        <th>Air Freight</th>
-                        <th>Sea Freight</th>
+                        <th data-id="Faktor" data-en="Factor">Faktor</th>
+                        <th data-id="Air Express" data-en="Air Express">Air Express</th>
+                        <th data-id="Air Freight" data-en="Air Freight">Air Freight</th>
+                        <th data-id="Sea Freight" data-en="Sea Freight">Sea Freight</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Kecepatan</strong></td>
-                        <td>Sangat Cepat</td>
-                        <td>Cepat</td>
-                        <td>Paling Lama</td>
+                        <td><strong data-id="Kecepatan" data-en="Speed">Kecepatan</strong></td>
+                        <td data-id="Sangat Cepat" data-en="Extremely Fast">Sangat Cepat</td>
+                        <td data-id="Cepat" data-en="Fast">Cepat</td>
+                        <td data-id="Paling Lama" data-en="Slowest">Paling Lama</td>
                     </tr>
                     <tr>
-                        <td><strong>Biaya</strong></td>
-                        <td>Paling Mahal</td>
-                        <td>Menengah</td>
-                        <td>Paling Ekonomis</td>
+                        <td><strong data-id="Biaya" data-en="Cost">Biaya</strong></td>
+                        <td data-id="Paling Mahal" data-en="Most Expensive">Paling Mahal</td>
+                        <td data-id="Menengah" data-en="Moderate">Menengah</td>
+                        <td data-id="Paling Ekonomis" data-en="Most Economical">Paling Ekonomis</td>
                     </tr>
                     <tr>
-                        <td><strong>Dasar Perhitungan</strong></td>
-                        <td>Actual vs Volumetric</td>
-                        <td>Actual vs Volumetric</td>
-                        <td>CBM atau Tonase</td>
+                        <td><strong data-id="Dasar Perhitungan" data-en="Calculation Basis">Dasar Perhitungan</strong></td>
+                        <td data-id="Actual vs Volumetric" data-en="Actual vs Volumetric">Actual vs Volumetric</td>
+                        <td data-id="Actual vs Volumetric" data-en="Actual vs Volumetric">Actual vs Volumetric</td>
+                        <td data-id="CBM atau Tonase" data-en="CBM or Tonnage">CBM atau Tonase</td>
                     </tr>
                     <tr>
-                        <td><strong>Cocok Untuk</strong></td>
-                        <td>Dokumen & Sampel</td>
-                        <td>Cargo Komersial</td>
-                        <td>Volume Besar</td>
+                        <td><strong data-id="Cocok Untuk" data-en="Best For">Cocok Untuk</strong></td>
+                        <td data-id="Dokumen & Sampel" data-en="Documents & Samples">Dokumen & Sampel</td>
+                        <td data-id="Cargo Komersial" data-en="Commercial Cargo">Cargo Komersial</td>
+                        <td data-id="Volume Besar" data-en="High Volume">Volume Besar</td>
                     </tr>
                     <tr>
-                        <td><strong>Transit Time</strong></td>
-                        <td>2 - 7 Hari</td>
-                        <td>3 - 10 Hari</td>
-                        <td>15 - 40 Hari</td>
+                        <td><strong data-id="Transit Time" data-en="Transit Time">Transit Time</strong></td>
+                        <td data-id="2 - 7 Hari" data-en="2 - 7 Days">2 - 7 Hari</td>
+                        <td data-id="3 - 10 Hari" data-en="3 - 10 Days">3 - 10 Hari</td>
+                        <td data-id="15 - 40 Hari" data-en="15 - 40 Days">15 - 40 Hari</td>
                     </tr>
                     <tr>
-                        <td><strong>Kapasitas Barang</strong></td>
-                        <td>Kecil - Menengah</td>
-                        <td>Menengah - Besar</td>
-                        <td>Sangat Besar</td>
+                        <td><strong data-id="Kapasitas Barang" data-en="Cargo Capacity">Kapasitas Barang</strong></td>
+                        <td data-id="Kecil - Menengah" data-en="Small - Medium">Kecil - Menengah</td>
+                        <td data-id="Menengah - Besar" data-en="Medium - Large">Menengah - Besar</td>
+                        <td data-id="Sangat Besar" data-en="Very Large">Sangat Besar</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2>Kesimpulan</h2>
-        <p>Chargeable Weight merupakan dasar perhitungan biaya pengiriman udara yang ditentukan berdasarkan nilai terbesar antara berat aktual dan berat volumetrik.</p>
-        <p>Secara umum:</p>
+        <h2 data-id="Kesimpulan" data-en="Conclusion">Kesimpulan</h2>
+        <p data-id="Chargeable Weight merupakan dasar perhitungan biaya pengiriman udara yang ditentukan berdasarkan nilai terbesar antara berat aktual dan berat volumetrik." data-en="Chargeable Weight is the baseline for air freight pricing, determined by taking the higher value between actual weight and volumetric weight.">Chargeable Weight merupakan dasar perhitungan biaya pengiriman udara yang ditentukan berdasarkan nilai terbesar antara berat aktual dan berat volumetrik.</p>
+        <p data-id="Secara umum:" data-en="In general:">Secara umum:</p>
         <ul>
-            <li><strong>Air Express</strong> menggunakan divisor 5000.</li>
-            <li><strong>Air Freight</strong> menggunakan divisor 6000.</li>
-            <li><strong>Sea Freight</strong> menggunakan perhitungan volume (CBM) atau tonase.</li>
+            <li data-id="Air Express menggunakan divisor 5000." data-en="Air Express utilizes a 5000 divisor.">Air Express menggunakan divisor 5000.</li>
+            <li data-id="Air Freight menggunakan divisor 6000." data-en="Air Freight utilizes a 6000 divisor.">Air Freight menggunakan divisor 6000.</li>
+            <li data-id="Sea Freight menggunakan perhitungan volume (CBM) atau tonase." data-en="Sea Freight relies on volume (CBM) or tonnage calculations.">Sea Freight menggunakan perhitungan volume (CBM) atau tonase.</li>
         </ul>
-        <p>Untuk pengiriman yang membutuhkan kecepatan tinggi, Air Express menjadi pilihan terbaik. Untuk kebutuhan komersial dengan biaya yang lebih efisien, Air Freight sering menjadi solusi yang lebih ekonomis. Sedangkan untuk impor dalam jumlah besar dan pengiriman volume tinggi, Sea Freight merupakan pilihan paling hemat.</p>
-        <p>Memahami cara menghitung Chargeable Weight dan karakteristik masing-masing metode pengiriman akan membantu Anda memilih solusi logistik yang paling tepat sesuai kebutuhan bisnis.</p>
+        <p data-id="Untuk pengiriman yang membutuhkan kecepatan tinggi, Air Express menjadi pilihan terbaik. Untuk kebutuhan komersial dengan biaya yang lebih efisien, Air Freight sering menjadi solusi yang lebih ekonomis. Sedangkan untuk impor dalam jumlah besar dan pengiriman volume tinggi, Sea Freight merupakan pilihan paling hemat." data-en="For shipments requiring high speed, Air Express is the top choice. For commercial requirements looking for better cost efficiency, Air Freight often proves to be the ideal solution. Meanwhile, for bulk imports and high-volume freight, Sea Freight remains the most budget-friendly option.">Untuk pengiriman yang membutuhkan kecepatan tinggi, Air Express menjadi pilihan terbaik. Untuk kebutuhan komersial dengan biaya yang lebih efisien, Air Freight sering menjadi solusi yang lebih ekonomis. Sedangkan untuk impor dalam jumlah besar dan pengiriman volume tinggi, Sea Freight merupakan pilihan paling hemat.</p>
+        <p data-id="Memahami cara menghitung Chargeable Weight dan karakteristik masing-masing metode pengiriman akan membantu Anda memilih solusi logistik yang paling tepat sesuai kebutuhan bisnis." data-en="Understanding how to calculate Chargeable Weight and the distinct attributes of each transport type will help you select the most suitable logistics solution tailored to your business needs.">Memahami cara menghitung Chargeable Weight dan karakteristik masing-masing metode pengiriman akan membantu Anda memilih solusi logistik yang paling tepat sesuai kebutuhan bisnis.</p>
     </main>
 
     <!-- Footer (Simplified) -->
@@ -350,5 +392,29 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Script Pengaturan Bahasa Otomatis -->
+    <script>
+        let currentLang = localStorage.getItem('gbu_lang') || 'id';
+
+        function updateDOMText() {
+            const translatableElements = document.querySelectorAll('[data-id][data-en]');
+            
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('gbu_lang', currentLang);
+            updateDOMText();
+        }
+
+        document.addEventListener("DOMContentLoaded", updateDOMText);
+    </script>
 </body>
 </html>
