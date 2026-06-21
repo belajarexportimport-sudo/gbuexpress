@@ -444,14 +444,12 @@
         let currentLang = localStorage.getItem('gbu_lang') || 'id';
 
         function updateDOMText() {
-            // Memindai seluruh elemen dengan penanda data bahasa
             const translatableElements = document.querySelectorAll('[data-id][data-en]');
             
             translatableElements.forEach(el => {
                 el.textContent = el.getAttribute(`data-${currentLang}`);
             });
 
-            // Modifikasi khusus untuk placeholder Form input agar bahasanya ikut berubah
             const nameInput = document.getElementById('form-name');
             const emailInput = document.getElementById('form-email');
             const phoneInput = document.getElementById('form-phone');
@@ -464,7 +462,6 @@
                 msgInput.placeholder = currentLang === 'id' ? 'Pesan Anda' : 'Your Message';
             }
 
-            // Update indikator teks pada tombol toggle
             document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
             document.documentElement.lang = currentLang;
         }
@@ -475,7 +472,6 @@
             updateDOMText();
         }
 
-        // Terapkan terjemahan instan saat dokumen siap
         document.addEventListener("DOMContentLoaded", updateDOMText);
     </script>
 </body>
