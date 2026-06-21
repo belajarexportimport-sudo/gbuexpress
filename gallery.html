@@ -25,7 +25,12 @@ header h2 {
     color: #3b82f6;
     letter-spacing: 1px;
 }
-/* Tombol Kembali ke Home di Header */
+/* Wadah Tombol di Kanan Header */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 .btn-home-nav {
     display: inline-flex;
     align-items: center;
@@ -44,6 +49,26 @@ header h2 {
     background: #3b82f6;
     color: #fff;
     transform: translateY(-1px);
+}
+/* Gaya Tombol Toggle Bahasa */
+.lang-toggle {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+.lang-toggle:hover {
+    background: #334155;
+    color: #fff;
+    border-color: #475569;
 }
 .hero, .cta {
     padding: 60px 20px;
@@ -75,7 +100,7 @@ header h2 {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 320px; /* Fixed height for uniform grid */
+    height: 320px;
 }
 .masonry-item:hover {
     transform: translateY(-5px) scale(1.02);
@@ -86,7 +111,7 @@ header h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* Focuses on the top part of screenshots/receipts */
+    object-position: top;
     display: block;
     transition: opacity 0.3s ease;
 }
@@ -137,7 +162,6 @@ header h2 {
     color: #cbd5e1;
     font-style: italic;
 }
-/* Section Aksi Tambahan di Bawah Galeri */
 .gallery-actions {
     text-align: center;
     margin: 30px 0 50px 0;
@@ -226,13 +250,19 @@ footer {
 <div style="background: #08101f;">
     <header>
         <h2>GBU Express</h2>
-        <a href="index.html" class="btn-home-nav">← Kembali ke Home</a>
+        <div class="header-nav">
+            <!-- Tombol Toggle Bahasa (ID / EN) -->
+            <button class="lang-toggle" onclick="toggleLanguage()">
+                🌐 <span id="lang-label">EN</span>
+            </button>
+            <a href="index.html" class="btn-home-nav" data-id="← Kembali ke Home" data-en="← Back to Home">← Kembali ke Home</a>
+        </div>
     </header>
 </div>
 
 <section class="hero">
-    <h1>Galeri Pengiriman & Resi</h1>
-    <p>Bukti nyata kepercayaan pelanggan kami dalam pengiriman barang domestik maupun internasional.</p>
+    <h1 data-id="Galeri Pengiriman & Resi" data-en="Shipping Gallery & Receipts">Galeri Pengiriman & Resi</h1>
+    <p data-id="Bukti nyata kepercayaan pelanggan kami dalam pengiriman barang domestik maupun internasional." data-en="Real proof of our customers' trust in domestic and international shipping.">Bukti nyata kepercayaan pelanggan kami dalam pengiriman barang domestik maupun internasional.</p>
 </section>
 
 <div class="gallery-container">
@@ -254,12 +284,12 @@ footer {
     </div>
 </div>
 
-<div class="notice">
+<div class="notice" data-id="* Privasi pelanggan dijaga dengan baik. Data rahasia pada resi tidak dipublikasikan secara penuh." data-en="* Customer privacy is well maintained. Confidential data on receipts is not fully published.">
     * Privasi pelanggan dijaga dengan baik. Data rahasia pada resi tidak dipublikasikan secara penuh.
 </div>
 
 <div class="gallery-actions">
-    <a href="index.html" class="btn-secondary">← Kembali Utama</a>
+    <a href="index.html" class="btn-secondary" data-id="← Kembali Utama" data-en="← Back Main">← Kembali Utama</a>
 </div>
 
 <section class="clients">
@@ -270,4 +300,68 @@ footer {
         <div class="client-item"><img src="client/PT Express Box.webp" alt="PT Express Box"></div>
         <div class="client-item"><img src="client/PT barata sentosa.webp" alt="PT Barata Sentosa"></div>
         <div class="client-item"><img src="client/UD Ryan Jaya.webp" alt="UD Ryan Jaya"></div>
-        <div class="client-item"><img src="client/java wood.webp" alt="java wood"></div>
+        <div class="client-item"><img src="client/java wood.webp" alt="Java Wood"></div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2 data-id="Siap Mengirim Barang dengan Aman?" data-en="Ready to Ship Your Goods Safely?">Siap Mengirim Barang dengan Aman?</h2>
+    <p style="margin-bottom: 20px;" data-id="Konsultasikan kebutuhan logistik Anda bersama tim ahli kami." data-en="Consult your logistics needs with our team of experts.">Konsultasikan kebutuhan logistik Anda bersama tim ahli kami.</p>
+    <a class="btn" href="https://wa.me/6289699864544" target="_blank" data-id="Hubungi via WhatsApp" data-en="Contact via WhatsApp">Hubungi via WhatsApp</a>
+</section>
+
+<footer>
+    <p>© 2026 GBU Express. All rights reserved.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <span onclick="closeLightbox(event)">&times;</span>
+    <img id="lightbox-img" onclick="event.stopPropagation()">
+</div>
+
+<script>
+    // Sistem Terjemahan Otomatis
+    let currentLang = localStorage.getItem('gbu_lang') || 'id';
+
+    function updateDOMText() {
+        const translatableElements = document.querySelectorAll('[data-id][data-en]');
+        
+        translatableElements.forEach(el => {
+            el.textContent = el.getAttribute(`data-${currentLang}`);
+        });
+
+        // Update tulisan di tombol toggle bahasa
+        document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
+        // Update tag HTML lang untuk kepentingan SEO
+        document.documentElement.lang = currentLang;
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'id' ? 'en' : 'id';
+        localStorage.setItem('gbu_lang', currentLang); // Simpan pilihan user agar tidak reset saat pindah page
+        updateDOMText();
+    }
+
+    // Jalankan terjemahan saat halaman selesai dimuat pertama kali
+    document.addEventListener("DOMContentLoaded", updateDOMText);
+
+    // Fungsi Lightbox Bawaan
+    function openLightbox(src){
+        const lightbox = document.getElementById('lightbox');
+        document.getElementById('lightbox-img').src = src;
+        lightbox.style.display = 'flex';
+        lightbox.offsetHeight;
+        lightbox.classList.add('show');
+    }
+    
+    function closeLightbox(event){
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('show');
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+        }, 300);
+    }
+</script>
+
+</body>
+</html>
