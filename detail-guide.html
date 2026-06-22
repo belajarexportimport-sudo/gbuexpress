@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBU Express - Guide Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            padding: 160px 0 50px;
+            text-align: center;
+            color: white;
+        }
+        .article-wrapper {
+            padding: 60px 0;
+            background: #f8fafc;
+            min-height: 60vh;
+        }
+        .article-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px -3px rgba(0,0,0,0.03);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .article-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #334155;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #0f172a;
+            font-size: 1.75rem;
+            margin: 2rem 0 1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            color: #1d4ed8;
+            transform: translateX(-3px);
+        }
+        .lang-toggle-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        .lang-toggle-btn {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-container" style="text-decoration: none;">
+                    <img src="logo GBU.webp" alt="GBU Express Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-id="Home" data-en="Home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" data-id="Services" data-en="Services">Services</a></li>
+                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);" data-id="Guide" data-en="Guide">Guide</a></li>
+                <li><a href="gallery.html" class="nav-link" data-id="Gallery" data-en="Gallery">Gallery</a></li>
+                <li><a href="index.html#about" class="nav-link" data-id="About" data-en="About">About</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-id="Contact" data-en="Contact">Contact</a></li>
+                <li class="lang-toggle-container">
+                    <button class="lang-toggle-btn" onclick="toggleLanguageAndRefresh()">
+                        <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 id="art-title-header" style="font-family: var(--font-heading); font-size: 2.5rem; max-width: 800px; margin: 0 auto;">Memuat Artikel...</h1>
+        </div>
+    </header>
+
+    <main class="article-wrapper">
+        <div class="container">
+            <div class="article-card">
+                <a href="import-export-guide.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> <span data-id="Kembali ke Panduan" data-en="Back to Guide">Kembali ke Panduan</span>
+                </a>
+                
+                <article class="article-content" id="art-content-body">
+                    <p>Sedang mengambil data konten dari Sanity Studio...</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; padding: 2rem 0;">
+            <p>&copy; 2026 GBU Express. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/client@latest/dist/sanityClient.browser.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+        // 1. IMPORT CLIENT MENGGUNAKAN CDN SKYPACK
+        import { createClient } from 'https://cdn.skypack.dev/@sanity/client';
+
+        // 2. INISIALISASI CLIENT
+        const client = createClient({
+            projectId: 'unekbzji', 
+            dataset: 'production',
+            useCdn: false,
+            apiVersion: '2026-06-21'
+        });
+
+        let currentLang = localStorage.getItem('gbu_lang') || 'id';
+        const urlParams = new URLSearchParams(window.location.search);
+        const slugDariUrl = urlParams.get('slug');
+
+        async function fetchDetailArtikel() {
+            if (!slugDariUrl) {
+                document.getElementById('art-content-body').innerHTML = '<p>Artikel tidak ditemukan (Slug kosong).</p>';
+                return;
+            }
+
+            try {
+                const query = `*[_type == "artikel" && (slugId.current == $slug || slugEn.current == $slug)][0]{
+                    judulId, judulEn, kontenId, kontenEn, 
+                    seoKeywordsId, seoKeywordsEn, metaDescriptionId, metaDescriptionEn, metaRobots
+                }`;
+                
+                const data = await client.fetch(query, { slug: slugDariUrl });
+
+                if (!data) {
+                    document.getElementById('art-content-body').innerHTML = '<p>Artikel tidak ditemukan di database Sanity.</p>';
+                    return;
+                }
+
+                if (currentLang === 'id') {
+                    document.title = `${data.judulId || 'Artikel'} - GBU Express`;
+                    document.getElementById('art-title-header').innerText = data.judulId || '';
+                    document.getElementById('art-content-body').innerHTML = renderRichText(data.kontenId);
+                    
+                    updateOrCreateMetaTag('description', data.metaDescriptionId || '');
+                    updateOrCreateMetaTag('keywords', data.seoKeywordsId || '');
+                } else {
+                    document.title = `${data.judulEn || 'Article'} - GBU Express`;
+                    document.getElementById('art-title-header').innerText = data.judulEn || '';
+                    document.getElementById('art-content-body').innerHTML = renderRichText(data.kontenEn);
+                    
+                    updateOrCreateMetaTag('description', data.metaDescriptionEn || '');
+                    updateOrCreateMetaTag('keywords', data.seoKeywordsEn || '');
+                }
+
+                updateOrCreateMetaTag('robots', data.metaRobots || 'index, follow');
+
+            } catch (error) {
+                console.error("Error Sanity Fetch:", error);
+                document.getElementById('art-content-body').innerHTML = '<p>Gagal memuat artikel dari database.</p>';
+            }
+        }
+
+        function renderRichText(blocks) {
+    if (!blocks || blocks.length === 0) return '<p>Konten artikel belum diisi.</p>';
+    
+    let htmlResult = '';
+    let diDalamList = false;
+
+    blocks.forEach(block => {
+        if (block._type !== 'block' || !block.children) return '';
+        
+        const teksKonten = block.children.map(child => {
+            if (child.marks && child.marks.includes('strong')) {
+                return `<strong>${child.text}</strong>`;
+            }
+            return child.text;
+        }).join('');
+
+        if (block.listItem === 'bullet') {
+            if (!diDalamList) {
+                htmlResult += '<ul>';
+                diDalamList = true;
+            }
+            htmlResult += `<li>${teksKonten}</li>`;
+            return;
+        } else if (diDalamList) {
+            htmlResult += '</ul>';
+            diDalamList = false;
+        }
+
+        if (block.style === 'h1') {
+            htmlResult += `<h1>${teksKonten}</h1>`;
+        } else if (block.style === 'h2') {
+            htmlResult += `<h2>${teksKonten}</h2>`;
+        } else if (block.style === 'h3') {
+            htmlResult += `<h3>${teksKonten}</h3>`;
+        } else {
+            htmlResult += `<p>${teksKonten}</p>`;
+        }
+    });
+
+    if (diDalamList) {
+        htmlResult += '</ul>';
+    }
+
+    return htmlResult;
+}
+
+        function updateOrCreateMetaTag(name, content) {
+            let meta = document.querySelector(`meta[name="${name}"]`);
+            if (!meta) {
+                meta = document.createElement('meta');
+                meta.name = name;
+                document.head.appendChild(meta);
+            }
+            meta.content = content;
+        }
+
+        function updateLanguageUI() {
+            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
+            const translatable = document.querySelectorAll('[data-id][data-en]');
+            translatable.forEach(el => { el.textContent = el.getAttribute(`data-${currentLang}`); });
+        }
+
+        // Daftarkan fungsi ke window agar tombol di navbar bisa memanggilnya
+        window.toggleLanguageAndRefresh = function() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('gbu_lang', currentLang);
+            updateLanguageUI();
+            fetchDetailArtikel();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateLanguageUI();
+            fetchDetailArtikel();
+        });
+    </script>
+</body>
+</html>

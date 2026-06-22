@@ -61,11 +61,42 @@
             font-weight: 600;
             margin-top: 1rem;
         }
+        .lang-toggle-container {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+        .lang-toggle-btn {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+        .lang-toggle-btn:hover {
+            background: #3b82f6;
+            color: #fff;
+            border-color: #3b82f6;
+        }
+        @media (max-width: 768px) {
+            .lang-toggle-container {
+                margin: 15px 0 0 0;
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -74,11 +105,17 @@
                 </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);">Guide</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-id="Home" data-en="Home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" data-id="Services" data-en="Services">Services</a></li>
+                <li><a href="import-export-guide.html" class="nav-link" style="color: var(--primary-blue);" data-id="Guide" data-en="Guide">Guide</a></li>
+                <li><a href="gallery.html" class="nav-link" data-id="Gallery" data-en="Gallery">Gallery</a></li>
+                <li><a href="index.html#about" class="nav-link" data-id="About" data-en="About">About</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-id="Contact" data-en="Contact">Contact</a></li>
+                <li class="lang-toggle-container">
+                    <button class="lang-toggle-btn" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
+                    </button>
+                </li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
@@ -86,40 +123,21 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <div class="container">
-            <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 1rem;">Import Export Guide</h1>
-            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">Kumpulan panduan, tips, dan informasi penting seputar layanan logistik, impor, dan ekspor.</p>
+            <h1 style="font-family: var(--font-heading); font-size: 3rem; margin-bottom: 1rem;" data-id="Panduan Ekspor Impor" data-en="Import Export Guide">Import Export Guide</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;" data-id="Kumpulan panduan, tips, dan informasi penting seputar layanan logistik, impor, dan ekspor." data-en="A collection of guides, tips, and essential information about logistics, import, and export services.">Kumpulan panduan, tips, dan informasi penting seputar layanan logistik, impor, dan ekspor.</p>
         </div>
     </header>
 
-    <!-- Articles Section -->
     <section class="section">
         <div class="container">
-            <div class="guide-grid">
-                <!-- Article 1 -->
-                <a href="perbedaan-pengiriman.html" class="guide-card">
-                    <div class="guide-content">
-                        <h3>Perbedaan Air Courier, Air Freight, Sea Freight, Kurir Domestik, dan Cargo Darat</h3>
-                        <p>Pelajari perbedaan berbagai metode pengiriman untuk memilih solusi logistik terbaik dan paling efisien bagi bisnis Anda.</p>
-                        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-
-                <!-- Article 2 -->
-                <a href="menghitung-chargeable-weight.html" class="guide-card">
-                    <div class="guide-content">
-                        <h3>Cara Menghitung Chargeable Weight dan Memilih Air Express, Air Freight, atau Sea Freight</h3>
-                        <p>Pahami cara kerja berat aktual vs volumetrik, dan rumus pembagi 5000 vs 6000 agar Anda bisa menghemat biaya pengiriman kargo.</p>
-                        <span class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
+            <div class="guide-grid" id="article-container">
+                <p>Sedang memuat daftar panduan...</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Simplified) -->
     <footer class="footer">
         <div class="container">
             <div style="text-align: center; padding-top: 2rem;">
@@ -128,6 +146,113 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/client@latest/dist/sanityClient.browser.js"></script>
     <script src="script.js"></script>
+
+    <script type="module">
+        // 1. IMPORT CLIENT MENGGUNAKAN CDN SKYPACK (PASTI BERHASIL & AMAN)
+        import { createClient } from 'https://cdn.skypack.dev/@sanity/client';
+
+        // 2. INISIALISASI CLIENT
+        const client = createClient({
+            projectId: 'unekbzji', 
+            dataset: 'production',
+            useCdn: false,
+            apiVersion: '2026-06-21'
+        });
+
+        let currentLang = localStorage.getItem('gbu_lang') || 'id';
+
+        // PENTING: Pindahkan fungsi fetchArticles ke dalam scope module ini agar bisa membaca variabel 'client'
+        async function fetchArticles() {
+    const container = document.getElementById('article-container');
+    
+    try {
+        // Menggunakan query sapu jagat agar semua data asli keluar tanpa tebak nama field
+        const query = `*[_type == "artikel"]`;
+        const articles = await client.fetch(query);
+
+        if (!articles || articles.length === 0) {
+            container.innerHTML = '<p>Belum ada artikel panduan yang diterbitkan.</p>';
+            return;
+        }
+
+        container.innerHTML = '';
+
+        articles.forEach(article => {
+            const card = document.createElement('a');
+            card.className = 'guide-card';
+
+            // Ambil paragraf pertama dari konten sebagai deskripsi otomatis karena field deskripsiId kosong
+            const dapatkanDeskripsiOtomatis = (blocks) => {
+                if (!blocks || blocks.length === 0) return 'Klik untuk membaca selengkapnya...';
+                const balokTeks = blocks.find(b => b._type === 'block' && b.children);
+                return balokTeks ? balokTeks.children.map(c => c.text).join('') : 'Klik untuk membaca selengkapnya...';
+            };
+
+            const deskripsiId = dapatkanDeskripsiOtomatis(article.kontenId);
+            const deskripsiEn = dapatkanDeskripsiOtomatis(article.kontenEn);
+
+            const judulId = article.judulId || 'Tanpa Judul';
+            const judulEn = article.judulEn || 'Untitled';
+            const slugId = article.slugId?.current || '';
+            const slugEn = article.slugEn?.current || '';
+
+            if (currentLang === 'id') {
+                card.href = `detail-guide.html?slug=${slugId}`;
+                card.innerHTML = `
+                    <div class="guide-content">
+                        <h3 data-id="${judulId}" data-en="${judulEn}">${judulId}</h3>
+                        <p>${deskripsiId.substring(0, 150)}...</p>
+                        <span class="read-more">
+                            <span data-id="Baca Selengkapnya" data-en="Read More">Baca Selengkapnya</span> 
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                `;
+            } else {
+                card.href = `detail-guide.html?slug=${slugEn}`;
+                card.innerHTML = `
+                    <div class="guide-content">
+                        <h3 data-id="${judulId}" data-en="${judulEn}">${judulEn}</h3>
+                        <p>${deskripsiEn.substring(0, 150)}...</p>
+                        <span class="read-more">
+                            <span data-id="Baca Selengkapnya" data-en="Read More">Read More</span> 
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                `;
+            }
+            container.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error('Gagal mengambil data dari Sanity:', error);
+        container.innerHTML = '<p>Gagal memuat daftar panduan. Silakan coba lagi nanti.</p>';
+    }
+}
+
+        function updateDOMText() {
+            const translatableElements = document.querySelectorAll('[data-id][data-en]');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
+            document.documentElement.lang = currentLang;
+        }
+
+        // Daftarkan fungsi toggle ke window agar bisa diklik dari HTML tombol navbar
+        window.toggleLanguage = function() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('gbu_lang', currentLang);
+            updateDOMText();
+            fetchArticles();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateDOMText();
+            fetchArticles();
+        });
+    </script>
 </body>
 </html>

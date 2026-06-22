@@ -266,21 +266,9 @@ footer {
 </section>
 
 <div class="gallery-container">
-    <div class="masonry">
-        <div class="masonry-item"><img src="foto resi dan pengiriman/Laoshan.webp" alt="Resi 1" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/Lekong.webp" alt="Resi 2" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/Rukhin.webp" alt="Resi 3" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/edgar.webp" alt="Resi 4" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/fatim.webp" alt="Resi 5" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/fery.webp" alt="Resi 6" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/habibi.webp" alt="Resi 7" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/hakim.webp" alt="Resi 8" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/jessica.webp" alt="Resi 9" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/jessica2.webp" alt="Resi 10" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/kks.webp" alt="Resi 11" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/tricahyo.webp" alt="Resi 12" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/tricahyo2.webp" alt="Resi 13" onclick="openLightbox(this.src)"></div>
-        <div class="masonry-item"><img src="foto resi dan pengiriman/wangta.webp" alt="Resi 14" onclick="openLightbox(this.src)"></div>
+    <div class="masonry" id="resi-container">
+        <!-- Container untuk galeri resi dari Sanity -->
+        <p id="resi-loading" style="text-align: center; width: 100%; color: #cbd5e1;">Memuat foto resi...</p>
     </div>
 </div>
 
@@ -294,13 +282,9 @@ footer {
 
 <section class="clients">
     <h2>Our Trusted Clients</h2>
-    <div class="client-grid">
-        <div class="client-item"><img src="client/Al Azhar.webp" alt="Al Azhar"></div>
-        <div class="client-item"><img src="client/Java.webp" alt="Java"></div>
-        <div class="client-item"><img src="client/PT Express Box.webp" alt="PT Express Box"></div>
-        <div class="client-item"><img src="client/PT barata sentosa.webp" alt="PT Barata Sentosa"></div>
-        <div class="client-item"><img src="client/UD Ryan Jaya.webp" alt="UD Ryan Jaya"></div>
-        <div class="client-item"><img src="client/java wood.webp" alt="Java Wood"></div>
+    <div class="client-grid" id="client-container">
+        <!-- Container untuk galeri client dari Sanity -->
+        <p id="client-loading" style="text-align: center; width: 100%; color: #cbd5e1;">Memuat data client...</p>
     </div>
 </section>
 
@@ -361,6 +345,70 @@ footer {
             lightbox.style.display = 'none';
         }, 300);
     }
+</script>
+
+<script type="module">
+    import { createClient } from 'https://cdn.skypack.dev/@sanity/client';
+
+    const client = createClient({
+        projectId: 'unekbzji', 
+        dataset: 'production',
+        useCdn: false,
+        apiVersion: '2026-06-21'
+    });
+
+    async function fetchGalleryData() {
+        try {
+            // Fetch Resi Data
+            const resiQuery = `*[_type == "resi"] | order(_createdAt desc) { title, altText, "imageUrl": image.asset->url }`;
+            const resiData = await client.fetch(resiQuery);
+            const resiContainer = document.getElementById('resi-container');
+            const resiLoading = document.getElementById('resi-loading');
+            
+            if (resiLoading) resiLoading.remove();
+            
+            if (resiData && resiData.length > 0) {
+                resiData.forEach(item => {
+                    if (item.imageUrl) {
+                        const div = document.createElement('div');
+                        div.className = 'masonry-item';
+                        div.innerHTML = `<img src="${item.imageUrl}" alt="${item.altText || item.title || 'Resi'}" onclick="openLightbox(this.src)">`;
+                        resiContainer.appendChild(div);
+                    }
+                });
+            } else {
+                resiContainer.innerHTML = '<p style="text-align: center; width: 100%; color: #cbd5e1;">Belum ada foto resi.</p>';
+            }
+
+            // Fetch Client Data
+            const clientQuery = `*[_type == "client"] | order(_createdAt desc) { name, "imageUrl": logo.asset->url }`;
+            const clientData = await client.fetch(clientQuery);
+            const clientContainer = document.getElementById('client-container');
+            const clientLoading = document.getElementById('client-loading');
+            
+            if (clientLoading) clientLoading.remove();
+            
+            if (clientData && clientData.length > 0) {
+                clientData.forEach(item => {
+                    if (item.imageUrl) {
+                        const div = document.createElement('div');
+                        div.className = 'client-item';
+                        div.innerHTML = `<img src="${item.imageUrl}" alt="${item.name || 'Client'}">`;
+                        clientContainer.appendChild(div);
+                    }
+                });
+            } else {
+                clientContainer.innerHTML = '<p style="text-align: center; width: 100%; color: #cbd5e1;">Belum ada data client.</p>';
+            }
+
+        } catch (error) {
+            console.error('Error fetching gallery data from Sanity:', error);
+            document.getElementById('resi-container').innerHTML = '<p style="text-align: center; width: 100%; color: #ef4444;">Gagal memuat galeri resi.</p>';
+            document.getElementById('client-container').innerHTML = '<p style="text-align: center; width: 100%; color: #ef4444;">Gagal memuat galeri client.</p>';
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchGalleryData);
 </script>
 
 </body>
