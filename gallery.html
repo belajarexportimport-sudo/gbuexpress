@@ -25,7 +25,6 @@ header h2 {
     color: #3b82f6;
     letter-spacing: 1px;
 }
-/* Wadah Tombol di Kanan Header */
 .header-nav {
     display: flex;
     align-items: center;
@@ -50,7 +49,6 @@ header h2 {
     color: #fff;
     transform: translateY(-1px);
 }
-/* Gaya Tombol Toggle Bahasa */
 .lang-toggle {
     background: #1e293b;
     border: 1px solid #334155;
@@ -251,7 +249,6 @@ footer {
     <header>
         <h2>GBU Express</h2>
         <div class="header-nav">
-            <!-- Tombol Toggle Bahasa (ID / EN) -->
             <button class="lang-toggle" onclick="toggleLanguage()">
                 🌐 <span id="lang-label">EN</span>
             </button>
@@ -267,7 +264,48 @@ footer {
 
 <div class="gallery-container">
     <div class="masonry" id="resi-container">
-        <!-- Container untuk galeri resi dari Sanity -->
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/edgar.webp" alt="Resi Edgar" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/fatim.webp" alt="Resi Fatim" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/fery.webp" alt="Resi Fery" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/habibi.webp" alt="Resi Habibi" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/hakim.webp" alt="Resi Hakim" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/jessica.webp" alt="Resi Jessica" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/jessica2.webp" alt="Resi Jessica2" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/kks.webp" alt="Resi kks" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/Laoshan.webp" alt="Resi Laoshan" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/Lekong.webp" alt="Resi Lekong" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/Rukhin.webp" alt="Resi Rukhin" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/tricahyo.webp" alt="Resi Tricahyo" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/tricahyo2.webp" alt="Resi Tricahyo2" onclick="openLightbox(this.src)">
+        </div>
+        <div class="masonry-item">
+            <img src="foto resi dan pengiriman/wangta.webp" alt="Resi Wangta" onclick="openLightbox(this.src)">
+        </div>
         <p id="resi-loading" style="text-align: center; width: 100%; color: #cbd5e1;">Memuat foto resi...</p>
     </div>
 </div>
@@ -283,7 +321,25 @@ footer {
 <section class="clients">
     <h2>Our Trusted Clients</h2>
     <div class="client-grid" id="client-container">
-        <!-- Container untuk galeri client dari Sanity -->
+        <div class="client-item">
+            <img src="client/Al Azhar.webp" alt="Client Logo">
+        </div>
+        <div class="client-item">
+            <img src="client/java wood.webp" alt="Client Logo">
+        </div>
+        <div class="client-item">
+            <img src="client/Java.webp" alt="Client Logo">
+        </div>
+        <div class="client-item">
+            <img src="client/PT barata sentosa.webp" alt="Client Logo">
+        </div>
+        <div class="client-item">
+            <img src="client/PT Express Box.webp" alt="Client Logo">
+        </div>
+        <div class="client-item">
+            <img src="client/UD Ryan Jaya.webp" alt="Client Logo">
+        </div>
+
         <p id="client-loading" style="text-align: center; width: 100%; color: #cbd5e1;">Memuat data client...</p>
     </div>
 </section>
@@ -304,32 +360,25 @@ footer {
 </div>
 
 <script>
-    // Sistem Terjemahan Otomatis
     let currentLang = localStorage.getItem('gbu_lang') || 'id';
 
     function updateDOMText() {
         const translatableElements = document.querySelectorAll('[data-id][data-en]');
-        
         translatableElements.forEach(el => {
             el.textContent = el.getAttribute(`data-${currentLang}`);
         });
-
-        // Update tulisan di tombol toggle bahasa
         document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
-        // Update tag HTML lang untuk kepentingan SEO
         document.documentElement.lang = currentLang;
     }
 
     function toggleLanguage() {
         currentLang = currentLang === 'id' ? 'en' : 'id';
-        localStorage.setItem('gbu_lang', currentLang); // Simpan pilihan user agar tidak reset saat pindah page
+        localStorage.setItem('gbu_lang', currentLang);
         updateDOMText();
     }
 
-    // Jalankan terjemahan saat halaman selesai dimuat pertama kali
     document.addEventListener("DOMContentLoaded", updateDOMText);
 
-    // Fungsi Lightbox Bawaan
     function openLightbox(src){
         const lightbox = document.getElementById('lightbox');
         document.getElementById('lightbox-img').src = src;
@@ -376,8 +425,6 @@ footer {
                         resiContainer.appendChild(div);
                     }
                 });
-            } else {
-                resiContainer.innerHTML = '<p style="text-align: center; width: 100%; color: #cbd5e1;">Belum ada foto resi.</p>';
             }
 
             // Fetch Client Data
@@ -397,14 +444,14 @@ footer {
                         clientContainer.appendChild(div);
                     }
                 });
-            } else {
-                clientContainer.innerHTML = '<p style="text-align: center; width: 100%; color: #cbd5e1;">Belum ada data client.</p>';
             }
 
         } catch (error) {
             console.error('Error fetching gallery data from Sanity:', error);
-            document.getElementById('resi-container').innerHTML = '<p style="text-align: center; width: 100%; color: #ef4444;">Gagal memuat galeri resi.</p>';
-            document.getElementById('client-container').innerHTML = '<p style="text-align: center; width: 100%; color: #ef4444;">Gagal memuat galeri client.</p>';
+            const resiLoading = document.getElementById('resi-loading');
+            const clientLoading = document.getElementById('client-loading');
+            if (resiLoading) resiLoading.remove();
+            if (clientLoading) clientLoading.remove();
         }
     }
 
