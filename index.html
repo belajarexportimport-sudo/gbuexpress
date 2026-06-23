@@ -1,479 +1,364 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" data-lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GBU Express Forwarding - Jasa Pengiriman Export Import</title>
-    <meta name="description"
-        content="GBU Express Forwarding - Layanan pengiriman export-import terpercaya via udara dan laut. Spesialis import China ke Indonesia.">
-
-    <!-- Fonts -->
+    <title>MDSGENSA - Exporter & Producer</title>
+    <meta name="description" content="PT. Mitra Dinamika Sejahtera (MDSGENSA) adalah produsen dan eksportir komoditas pertanian, pertambangan, F&B, serta kerajinan berkualitas tinggi dari Indonesia.">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Tambahan Style Khusus untuk Tombol Bahasa agar Selaras dengan CSS Anda -->
-    <style>
-        .lang-toggle-container {
-            display: inline-flex;
-            align-items: center;
-            margin-left: 15px;
-        }
-        .lang-toggle-btn {
-            background: #1e293b;
-            border: 1px solid #334155;
-            color: #cbd5e1;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.85rem;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
-        }
-        .lang-toggle-btn:hover {
-            background: #3b82f6;
-            color: #fff;
-            border-color: #3b82f6;
-        }
-        @media (max-width: 768px) {
-            .lang-toggle-container {
-                margin: 15px 0 0 0;
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">
-                <a href="#home" class="logo-container" style="text-decoration: none;">
-                    <img src="logo GBU.webp" alt="GBU Express Logo" class="logo-img">
-                </a>
+            <div class="logo">
+                <img src="images/logo_mdsgensa_v2.webp" alt="MDSGENSA Logo" loading="lazy">
+                <span>MDSGENSA</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-id="Home" data-en="Home">Home</a></li>
-                <li><a href="#services" class="nav-link" data-id="Services" data-en="Services">Services</a></li>
-                <li><a href="import-export-guide.html" class="nav-link" data-id="Guide" data-en="Guide">Guide</a></li>
-                <li><a href="gallery.html" class="nav-link" data-id="Gallery" data-en="Gallery">Gallery</a></li>
-                <li><a href="#about" class="nav-link" data-id="About" data-en="About">About</a></li>
-                <li><a href="#contact" class="nav-link" data-id="Contact" data-en="Contact">Contact</a></li>
-                <!-- Tambahan elemen tombol bahasa di akhir menu -->
-                <li class="lang-toggle-container">
-                    <button class="lang-toggle-btn" onclick="toggleLanguage()">
-                        <i class="fas fa-globe"></i> <span id="lang-label">EN</span>
-                    </button>
+            <ul class="nav-links">
+                <li><a href="index.html#home" data-i18n="nav_home">Beranda</a></li>
+                <li><a href="index.html#about" data-i18n="nav_about">Tentang Kami</a></li>
+                <li class="dropdown">
+                    <a href="index.html#business-unit" data-i18n="nav_business">Unit Bisnis <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="biz-unit.html?unit=arch" data-i18n="biz_arch">Architectural Consultant</a>
+                        <a href="biz-unit.html?unit=prod" data-i18n="biz_prod">Producer & Manufacturing</a>
+                        <a href="biz-unit.html?unit=const" data-i18n="biz_const">Contractor (Civil, Interior, ME)</a>
+                        <a href="biz-unit.html?unit=trans" data-i18n="biz_trans">Transportation</a>
+                        <a href="biz-unit.html?unit=exim" data-i18n="biz_exim">Export-Import</a>
+                        <a href="biz-unit.html?unit=eo" data-i18n="biz_eo">Event Organizer</a>
+                        <a href="biz-unit.html?unit=invest" data-i18n="biz_invest">Investment & Funding</a>
+                        <a href="biz-unit.html?unit=travel" data-i18n="biz_travel">Tour & Travel</a>
+                        <a href="biz-unit.html?unit=ment" data-i18n="biz_ment">SME & Export Mentorship</a>
+                    </div>
                 </li>
+                <li><a href="gensa-kopgensa.html" data-i18n="nav_gensa">Gensa & Kopgensa</a></li>
+                <li class="dropdown">
+                    <a href="#" style="cursor: default;" data-i18n="nav_media">Media & Insights <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="news.html" data-i18n="nav_news">News</a>
+                        <a href="export-insights.html" data-i18n="nav_insights">Export Insights</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="index.html#products" data-i18n="nav_products">Produk <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html?tab=food#products" data-i18n="tab_food">Makanan & Minuman</a>
+                        <a href="index.html?tab=mining#products" data-i18n="tab_mining">Produk Tambang</a>
+                        <a href="index.html?tab=other#products" data-i18n="tab_other">Produk Lainnya</a>
+                    </div>
+                </li>
+                <li><a href="index.html#contact" data-i18n="nav_contact">Kontak</a></li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="lang-switch">
+                <button id="lang-id" class="lang-btn active">ID</button>
+                <button id="lang-en" class="lang-btn">EN</button>
+            </div>
+            <a href="https://wa.me/628170000578" class="nav-cta" target="_blank">WhatsApp <i class="fab fa-whatsapp"></i></a>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <!-- Hero Image -->
-    <div class="hero-image-wrap" id="home">
-        <img src="hero_section_new.webp" alt="GBU Express - Global Freight Forwarding" class="hero-image-full">
-    </div>
-
-    <!-- Hero Content Below Image -->
-    <section class="hero-content-section">
+    <!-- Hero Section -->
+    <header class="hero" id="home">
         <div class="container">
-            <div class="hero-content-inner">
-                <div class="hero-text-block">
-                    <span class="hero-badge"><i class="fas fa-globe"></i> Trusted Global Forwarder</span>
-                    <h1 class="hero-title">
-                        <span class="brand-text-hero">GBU EXPRESS</span><br>
-                        <span data-id="Your Trusted Global Shipping Partner" data-en="Your Trusted Global Shipping Partner">Your Trusted Global Shipping Partner</span>
-                    </h1>
-                    <p class="hero-subtitle" data-id="Layanan Export-Import Terpercaya via Udara &amp; Laut" data-en="Trusted Export-Import Services via Air &amp; Sea">Layanan Export-Import Terpercaya via Udara &amp; Laut</p>
-                    <p class="hero-description" data-id="Spesialis pengiriman dari China ke Indonesia dan export ke seluruh dunia dengan harga kompetitif dan layanan profesional" data-en="Specialist in shipping from China to Indonesia and exporting worldwide with competitive prices and professional services">Spesialis pengiriman dari China ke Indonesia dan export ke seluruh dunia dengan harga kompetitif dan layanan profesional</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i> <span data-id="Get Quote" data-en="Get Quote">Get Quote</span>
-                        </a>
-                        <a href="https://wa.me/6289699864544" target="_blank" class="btn btn-wa">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
+            <div class="hero-content">
+                <span class="badge reveal" data-i18n="hero_badge">Eksportir & Produsen Terpercaya sejak 2012</span>
+                <h1 class="reveal reveal-delay-1"><span class="highlight">MDSGENSA</span></h1>
+                <p class="reveal reveal-delay-2" data-i18n="hero_tagline">"Connecting Indonesian Heritage to Global Markets"</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn btn-primary" data-i18n="btn_products">Lihat Produk Kami</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">Hubungi Kami</a>
                 </div>
-                <div class="hero-stats-block">
-                    <div class="stat-card">
-                        <i class="fas fa-globe"></i>
-                        <h3>50+</h3>
-                        <p data-id="Negara" data-en="Countries">Countries</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-box"></i>
-                        <h3>1000+</h3>
-                        <p data-id="Pengiriman" data-en="Shipments">Shipments</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-users"></i>
-                        <h3>500+</h3>
-                        <p data-id="Klien Puas" data-en="Happy Clients">Happy Clients</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-star"></i>
-                        <h3>5★</h3>
-                        <p data-id="Penilaian" data-en="Rating">Rating</p>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about section reveal" id="about">
+        <div class="container">
+            <div class="about-text reveal">
+                <h2 class="section-title" data-i18n="about_title">Tentang Kami</h2>
+                <p data-i18n="about_p1">PT. Mitra Dinamika Sejahtera (MDSGENSA) adalah perusahaan yang bergerak di bidang ekspor dan produksi dengan visi menjadi mitra bisnis yang paling bertanggung jawab, berkomitmen, dan dapat dipercaya.</p>
+                <p data-i18n="about_p2">Kami mengelola berbagai lini produk mulai dari hasil pertanian (Agriculture), produk pertambangan (Mining), makanan & minuman (F&B), hingga kerajinan dan furniture. Dengan pengalaman lebih dari satu dekade, kami telah melayani berbagai klien skala besar di pasar internasional.</p>
+                <ul class="features">
+                    <li class="reveal reveal-delay-1"><i class="fas fa-check-circle"></i> <span data-i18n="feat_responsible">Bertanggung Jawab (Responsible)</span></li>
+                    <li class="reveal reveal-delay-2"><i class="fas fa-check-circle"></i> <span data-i18n="feat_committed">Berkomitmen (Committed)</span></li>
+                    <li class="reveal reveal-delay-3"><i class="fas fa-check-circle"></i> <span data-i18n="feat_trustworthy">Terpercaya (Trustworthy)</span></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
+    <!-- Business Unit Section -->
+    <section class="business-unit section reveal" id="business-unit" style="background: #fff;">
         <div class="container">
-            <h2 class="section-title" data-id="Layanan Kami" data-en="Our Services">Our Services</h2>
-            <p class="section-subtitle" data-id="Solusi lengkap untuk kebutuhan pengiriman internasional Anda" data-en="Complete solutions for your international shipping needs">Solusi lengkap untuk kebutuhan pengiriman internasional Anda</p>
-
-            <div class="services-grid">
-                <!-- Air Freight -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plane"></i>
+            <h2 class="section-title text-center" data-i18n="business_title">Unit Bisnis Kami</h2>
+            <div class="business-grid">
+                <a href="biz-unit.html?unit=arch" class="biz-card-link">
+                    <div class="biz-card reveal">
+                        <i class="fas fa-drafting-compass"></i>
+                        <h3 data-i18n="biz_arch">Architectural Consultant</h3>
                     </div>
-                    <h3>Air Freight</h3>
-                    <p data-id="Pengiriman cepat via udara untuk barang urgent dengan tracking real-time" data-en="Fast air freight delivery for urgent goods with real-time tracking">Pengiriman cepat via udara untuk barang urgent dengan tracking real-time</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> <span data-id="Layanan door to door" data-en="Door to door service">Door to door service</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Pengiriman ekspres" data-en="Express delivery">Express delivery</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Tersedia asuransi" data-en="Insurance available">Insurance available</span></li>
-                    </ul>
-                </div>
-
-                <!-- Sea Freight -->
-                <div class="service-card">
-                    <div class="service-icon">
+                </a>
+                <a href="biz-unit.html?unit=prod" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-1">
+                        <i class="fas fa-industry"></i>
+                        <h3 data-i18n="biz_prod">Producer & Manufacturing</h3>
+                    </div>
+                </a>
+                <a href="biz-unit.html?unit=const" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-2">
+                        <i class="fas fa-tools"></i>
+                        <h3 data-i18n="biz_const">Contractor (Civil, Interior, ME)</h3>
+                    </div>
+                </a>
+                <a href="biz-unit.html?unit=trans" class="biz-card-link">
+                    <div class="biz-card reveal">
+                        <i class="fas fa-truck-loading"></i>
+                        <h3 data-i18n="biz_trans">Transportation</h3>
+                    </div>
+                </a>
+                <a href="biz-unit.html?unit=exim" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-1">
                         <i class="fas fa-ship"></i>
+                        <h3 data-i18n="biz_exim">Export-Import</h3>
                     </div>
-                    <h3>Sea Freight</h3>
-                    <p data-id="Pengiriman ekonomis via laut untuk volume besar dengan harga kompetitif" data-en="Economical shipping via sea for large volumes with competitive rates">Pengiriman ekonomis via laut untuk volume besar dengan harga kompetitif</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> <span data-id="Layanan FCL &amp; LCL" data-en="FCL &amp; LCL service">FCL & LCL service</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Biaya efektif" data-en="Cost effective">Cost effective</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Pembersihan bea cukai" data-en="Customs clearance">Customs clearance</span></li>
-                    </ul>
-                </div>
-
-                <!-- Export Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-globe-asia"></i>
+                </a>
+                <a href="biz-unit.html?unit=eo" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-2">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3 data-i18n="biz_eo">Event Organizer</h3>
                     </div>
-                    <h3 data-id="Ekspor Seluruh Dunia" data-en="Export Worldwide">Export Worldwide</h3>
-                    <p data-id="Kirim barang Anda ke seluruh dunia dengan jaringan global kami" data-en="Send your goods worldwide with our global network">Kirim barang Anda ke seluruh dunia dengan jaringan global kami</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> <span data-id="Jaringan global" data-en="Global network">Global network</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Dukungan dokumentasi" data-en="Documentation support">Documentation support</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Tarif kompetitif" data-en="Competitive rates">Competitive rates</span></li>
-                    </ul>
-                </div>
-
-                <!-- Import China-Indonesia -->
-                <div class="service-card featured">
-                    <div class="featured-badge" data-id="Populer" data-en="Popular">Popular</div>
-                    <div class="service-icon">
-                        <i class="fas fa-box-open"></i>
+                </a>
+                <a href="biz-unit.html?unit=invest" class="biz-card-link">
+                    <div class="biz-card reveal">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3 data-i18n="biz_invest">Investment & Funding</h3>
                     </div>
-                    <h3>Import China - Indonesia</h3>
-                    <p data-id="Spesialis import dari China dengan pengalaman dan jaringan luas" data-en="Import specialist from China with extensive experience and network">Spesialis import dari China dengan pengalaman dan jaringan luas</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> <span data-id="Bantuan pengadaan barang" data-en="Sourcing assistance">Sourcing assistance</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Pemeriksaan kualitas" data-en="Quality inspection">Quality inspection</span></li>
-                        <li><i class="fas fa-check"></i> <span data-id="Bea cukai cepat" data-en="Fast customs clearance">Fast customs clearance</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="section section-alt" id="about">
-        <div class="container">
-            <h2 class="section-title" data-id="Mengapa Memilih GBU Express?" data-en="Why Choose GBU Express?">Why Choose GBU Express?</h2>
-            <p class="section-subtitle" data-id="Keunggulan yang membuat kami berbeda" data-en="The advantages that make us different">Keunggulan yang membuat kami berbeda</p>
-
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 data-id="Harga Kompetitif" data-en="Competitive Pricing">Competitive Pricing</h3>
-                    <p data-id="Harga terbaik dengan kualitas layanan premium" data-en="Best rates with premium service quality">Harga terbaik dengan kualitas layanan premium</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3 data-id="Pengiriman Cepat" data-en="Fast Delivery">Fast Delivery</h3>
-                    <p data-id="Pengiriman tepat waktu dengan tracking real-time" data-en="On-time delivery with real-time tracking">Pengiriman tepat waktu dengan tracking real-time</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 data-id="Aman &amp; Terpercaya" data-en="Reliable &amp; Secure">Reliable & Secure</h3>
-                    <p data-id="Barang Anda aman dengan asuransi dan handling profesional" data-en="Your goods are safe with insurance and professional handling">Barang Anda aman dengan asuransi dan handling profesional</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p data-id="Tim customer service siap membantu kapan saja" data-en="Customer service team is ready to help anytime">Tim customer service siap membantu kapan saja</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3 data-id="Dokumentasi Mudah" data-en="Easy Documentation">Easy Documentation</h3>
-                    <p data-id="Bantuan lengkap untuk semua dokumen export-import" data-en="Full assistance for all export-import documents">Bantuan lengkap untuk semua dokumen export-import</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3 data-id="Jaringan Global" data-en="Global Network">Global Network</h3>
-                    <p data-id="Partner terpercaya di berbagai negara" data-en="Trusted partners in various countries">Partner terpercaya di berbagai negara</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coverage Area -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title" data-id="Wilayah Jangkauan" data-en="Coverage Area">Coverage Area</h2>
-            <div class="coverage-container">
-                <div class="coverage-card">
-                    <div class="coverage-icon">
+                </a>
+                <a href="biz-unit.html?unit=travel" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-1">
                         <i class="fas fa-plane-departure"></i>
+                        <h3 data-i18n="biz_travel">Tour & Travel</h3>
                     </div>
-                    <h3 data-id="Layanan Ekspor" data-en="Export Services">Export Services</h3>
-                    <p class="coverage-desc" data-id="Kirim barang dari Indonesia ke seluruh dunia" data-en="Send goods from Indonesia to worldwide">Kirim barang dari Indonesia ke seluruh dunia</p>
-                    <div class="coverage-badge">
-                        <i class="fas fa-globe"></i> <span data-id="Jangkauan Seluruh Dunia" data-en="Worldwide Coverage">Worldwide Coverage</span>
+                </a>
+                <a href="biz-unit.html?unit=ment" class="biz-card-link">
+                    <div class="biz-card reveal reveal-delay-2">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3 data-i18n="biz_ment">SME & Export Mentorship</h3>
                     </div>
-                </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="coverage-card highlight" style="border-color: var(--primary-blue);">
-                    <div class="coverage-icon" style="background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));">
-                        <i class="fas fa-star" style="color: white;"></i>
-                    </div>
-                    <h3 data-id="Ekspor Populer" data-en="Popular Export">Popular Export</h3>
-                    <p class="coverage-desc" data-id="Rute tujuan export paling diminati" data-en="Most preferred export destination routes">Rute tujuan export paling diminati</p>
-                    <div class="coverage-route" style="flex-wrap: wrap; margin-top: 1rem; gap: 10px;">
-                        <span class="flag">USA</span>
-                        <span class="flag">Hong Kong</span>
-                        <span class="flag">China</span>
-                        <span class="flag">Australia</span>
-                    </div>
-                </div>
+    <!-- Products Section -->
+    <section class="products reveal" id="products">
+        <div class="container">
+            <h2 class="section-title text-center reveal" data-i18n="products_title">Our Focus Product Export</h2>
+            <div class="product-tabs reveal reveal-delay-1">
+                <button class="tab-btn active" data-target="food" data-i18n="tab_food">Food & Beverages</button>
+                <button class="tab-btn" data-target="mining" data-i18n="tab_mining">Mining Products</button>
+                <button class="tab-btn" data-target="other" data-i18n="tab_other">Other Products</button>
+            </div>
 
-                <div class="coverage-card highlight">
-                    <div class="coverage-icon">
-                        <i class="fas fa-plane-arrival"></i>
-                    </div>
-                    <h3 data-id="Layanan Impor" data-en="Import Services">Import Services</h3>
-                    <p class="coverage-desc" data-id="Spesialis import dari China ke Indonesia" data-en="Specialist import from China to Indonesia">Spesialis import dari China ke Indonesia</p>
-                    <div class="coverage-route">
-                        <span class="flag">China</span>
-                        <i class="fas fa-arrow-right"></i>
-                        <span class="flag">Indonesia</span>
-                    </div>
+            <div class="product-grid" id="food">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+
+            <div class="product-grid hidden" id="mining">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+
+            <div class="product-grid hidden" id="other">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller Section -->
+    <section class="best-seller section reveal" id="bestseller">
+        <div class="container">
+            <h2 class="section-title text-center" data-i18n="bestseller_title">10 Best Seller</h2>
+            <div class="bestseller-grid reveal">
+                <div class="bestseller-item">
+                    <span class="number">1</span>
+                    <span class="text" data-i18n="bs_1">Palm Oil and its derivatives</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">2</span>
+                    <span class="text" data-i18n="bs_2">Coffee beans</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">3</span>
+                    <span class="text" data-i18n="bs_3">Nuts</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">4</span>
+                    <span class="text" data-i18n="bs_4">Coconut</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">5</span>
+                    <span class="text" data-i18n="bs_5">Cocoa Powder & Cocoa Butter</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">6</span>
+                    <span class="text" data-i18n="bs_6">Sauces and seasonings</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">7</span>
+                    <span class="text" data-i18n="bs_7">Fishery Products and Seafood</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">8</span>
+                    <span class="text" data-i18n="bs_8">Herbs and spices</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">9</span>
+                    <span class="text" data-i18n="bs_9">Copra coconut oil</span>
+                </div>
+                <div class="bestseller-item">
+                    <span class="number">10</span>
+                    <span class="text" data-i18n="bs_10">Margarine</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section section-alt" id="contact">
+    <!-- Inquiry / RFQ Section -->
+    <section class="inquiry section reveal" id="inquiry">
         <div class="container">
-            <h2 class="section-title" data-id="Hubungi Kami" data-en="Get In Touch">Get In Touch</h2>
-            <p class="section-subtitle" data-id="Hubungi kami untuk konsultasi gratis dan penawaran terbaik" data-en="Contact us for free consultation and best quotes">Hubungi kami untuk konsultasi gratis dan penawaran terbaik</p>
-
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 data-id="Informasi Kontak" data-en="Contact Information">Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4 data-id="Alamat" data-en="Address">Address</h4>
-                            <p>Perum Modernland B1 No.7, Bohar, Taman, 61257. Sidoarjo - Jawa Timur</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone / WhatsApp</h4>
-                            <p>0896-9986-4544</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>garyaberdikarindoutama@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-instagram"></i>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p><a href="https://www.instagram.com/gbusurabaya/" target="_blank">@gbusurabaya</a></p>
-                        </div>
-                    </div>
+            <div class="inquiry-grid">
+                <div class="inquiry-text">
+                    <h2 class="section-title" data-i18n="rfq_title">Request for Quotation (RFQ)</h2>
+                    <p data-i18n="rfq_desc">Siap untuk melakukan pemesanan atau butuh penawaran khusus untuk kebutuhan bisnis Anda? Silakan isi formulir di samping, tim kami akan segera menghubungi Anda dengan penawaran terbaik.</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> <span data-i18n="rfq_benefit1">Penawaran Harga Kompetitif</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="rfq_benefit2">Opsi Pengiriman Internasional</span></li>
+                        <li><i class="fas fa-check"></i> <span data-i18n="rfq_benefit3">Jaminan Kualitas Produk</span></li>
+                    </ul>
                 </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
+                <div class="inquiry-form-container">
+                    <form name="rfq" method="POST" data-netlify="true" class="rfq-form">
                         <div class="form-group">
-                            <input type="text" id="form-name" placeholder="Your Name" required>
+                            <label data-i18n="form_name">Nama Lengkap</label>
+                            <input type="text" name="name" placeholder="Nama Anda" required data-i18n-placeholder="form_name_ph">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="form_company">Perusahaan</label>
+                                <input type="text" name="company" placeholder="Nama Perusahaan" required data-i18n-placeholder="form_company_ph">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="form_email">Email Bisnis</label>
+                                <input type="email" name="email" placeholder="email@perusahaan.com" required data-i18n-placeholder="form_email_ph">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-i18n="form_phone">Telepon/WA</label>
+                                <input type="tel" name="phone" placeholder="+62..." required data-i18n-placeholder="form_phone_ph">
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="form_address">Negara/Alamat</label>
+                                <input type="text" name="address" placeholder="Contoh: Indonesia" required data-i18n-placeholder="form_address_ph">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="form-email" placeholder="Your Email" required>
+                            <label data-i18n="form_detail">Detail Kebutuhan</label>
+                            <textarea name="message" rows="4" placeholder="Sebutkan produk dan estimasi jumlah yang dibutuhkan..." required data-i18n-placeholder="form_detail_ph"></textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" id="form-phone" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="form-service" required>
-                                <option value="" data-id="Pilih Layanan" data-en="Select Service">Select Service</option>
-                                <option value="air">Air Freight</option>
-                                <option value="sea">Sea Freight</option>
-                                <option value="export">Export Service</option>
-                                <option value="import">Import China-Indonesia</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="form-msg" placeholder="Your Message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-paper-plane"></i> <span data-id="Kirim Pesan" data-en="Send Message">Send Message</span>
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-block" data-i18n="form_submit">Kirim Permintaan Penawaran</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Contact Section -->
+    <section class="contact reveal" id="contact">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo GBU.webp" alt="GBU Express Logo" class="logo-img footer-logo-img">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 class="section-title" data-i18n="contact_title">Hubungi Kami</h2>
+                    <p data-i18n="contact_desc">Siap untuk bermitra dengan kami? Hubungi tim kami untuk konsultasi dan penawaran terbaik.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item reveal reveal-delay-1">
+                            <i class="fas fa-store"></i>
+                            <div>
+                                <h4>Indonesia Showroom & Office</h4>
+                                <p>Indonesian Ethnic Gallery (GENSA) WTC Matahari Serpong UpGround Mall no.32, North Serpong, South Tangerang City, Banten, Indonesia 15322</p>
+                                <p><strong>Phone:</strong> +62 812 8080 5057</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal reveal-delay-2">
+                            <i class="fas fa-warehouse"></i>
+                            <div>
+                                <h4>Warehouse & Workshop Office</h4>
+                                <p>MDS GENSA PARTNERSHIP Jl. Raya Jelupang No.1 Rt.009/Rw.003, Amazona Melati Mas Apartment, North Serpong, South Tangerang, Banten, Indonesia 15323</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal reveal-delay-3">
+                            <i class="fas fa-globe-asia"></i>
+                            <div>
+                                <h4>Malaysia Representative Office</h4>
+                                <p>No. 35, 2nd Floor Block D, Taman Desa Rakyat Perdana, Pasir Gudang, Johor Bahru, Malaysia 81700</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal reveal-delay-4">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>Gunungkidul Yogyakarta</h4>
+                                <p>MDS UKM JI Partnership House. Old Fisheries, Susukan I. Ponjong, Gunungkidul, Yogyakarta</p>
+                            </div>
+                        </div>
+                        <div class="info-item reveal">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>mitra.dinamika@yahoo.com</p>
+                            </div>
+                        </div>
                     </div>
-                    <p data-id="Mitra terpercaya Anda untuk layanan pengiriman internasional" data-en="Your trusted partner for international shipping services">Your trusted partner for international shipping services</p>
+
                     <div class="social-links">
-                        <a href="https://www.instagram.com/gbusurabaya/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/6289699864544" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:garyaberdikarindoutama@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/mdsgensa/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-
-                <div class="footer-col">
-                    <h4 data-id="Layanan" data-en="Services">Services</h4>
-                    <ul>
-                        <li><a href="#services">Air Freight</a></li>
-                        <li><a href="#services">Sea Freight</a></li>
-                        <li><a href="#services">Export Service</a></li>
-                        <li><a href="#services">Import China-Indonesia</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 data-id="Tautan Kilat" data-en="Quick Links">Quick Links</h4>
-                    <ul>
-                        <li><a href="#home" data-id="Home" data-en="Home">Home</a></li>
-                        <li><a href="#services" data-id="Layanan" data-en="Services">Services</a></li>
-                        <li><a href="#about" data-id="Tentang Kami" data-en="About Us">About Us</a></li>
-                        <li><a href="#contact" data-id="Kontak" data-en="Contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 data-id="Kontak" data-en="Contact">Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Perum Modernland B1 No.7, Sidoarjo - Jawa Timur</li>
-                        <li><i class="fas fa-phone"></i> 0896-9986-4544</li>
-                        <li><i class="fas fa-envelope"></i> garyaberdikarindoutama@gmail.com</li>
-                    </ul>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.123!2d106.657!3d-6.248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTQnNTIuOCJTIDEwNsKwMzknMjUuMiJF!5e0!3m2!1sid!2sid!4v1672100000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 GBU Express Forwarding. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer_copy">&copy; 2026 MDSGENSA. Seluruh Hak Cipta Dilindungi.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6289699864544" class="whatsapp-float" target="_blank">
+    <!-- Floating WA -->
+    <a href="https://wa.me/628170000578" class="floating-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
+        <span>Chat with Us</span>
     </a>
 
     <script src="script.js"></script>
-
-    <!-- Script Pengaturan Bahasa Otomatis -->
-    <script>
-        let currentLang = localStorage.getItem('gbu_lang') || 'id';
-
-        function updateDOMText() {
-            const translatableElements = document.querySelectorAll('[data-id][data-en]');
-            
-            translatableElements.forEach(el => {
-                el.textContent = el.getAttribute(`data-${currentLang}`);
-            });
-
-            const nameInput = document.getElementById('form-name');
-            const emailInput = document.getElementById('form-email');
-            const phoneInput = document.getElementById('form-phone');
-            const msgInput = document.getElementById('form-msg');
-
-            if(nameInput && emailInput && phoneInput && msgInput) {
-                nameInput.placeholder = currentLang === 'id' ? 'Nama Anda' : 'Your Name';
-                emailInput.placeholder = currentLang === 'id' ? 'Email Anda' : 'Your Email';
-                phoneInput.placeholder = currentLang === 'id' ? 'Nomor Telepon' : 'Phone Number';
-                msgInput.placeholder = currentLang === 'id' ? 'Pesan Anda' : 'Your Message';
-            }
-
-            document.getElementById('lang-label').textContent = currentLang === 'id' ? 'EN' : 'ID';
-            document.documentElement.lang = currentLang;
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'id' ? 'en' : 'id';
-            localStorage.setItem('gbu_lang', currentLang);
-            updateDOMText();
-        }
-
-        document.addEventListener("DOMContentLoaded", updateDOMText);
-    </script>
 </body>
-
 </html>
